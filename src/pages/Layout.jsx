@@ -1,16 +1,13 @@
-import React from "react"
+import React, { useState } from "react";
+import AppHeader from "../components/layout/AppHeader";
 
 function Layout() {
+
   return (
-    <div className="">
-        <h1 className="text-3xl font-bold underline bg-black text-white">
-          Layout!!!
-        </h1>
-        <h1 className="text-3xl font-bold underline">
-          Layout heheheh!!!
-        </h1>
-    </div>
-  )
+    <>
+      <AppHeader></AppHeader>
+    </>
+  );
 }
 
-export default Layout
+export default Layout;
