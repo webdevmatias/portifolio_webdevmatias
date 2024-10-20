@@ -10,7 +10,7 @@ function AppHeader() {
   // Lista de rotas e seus respectivos textos
   const menuItems = [
     { label: 'Home', path: '/' },
-    { label: 'Sobre Mim', path: '/sobre' },
+    { label: 'Sobre_Mim', path: '/sobre' },
     { label: 'Habilidades', path: '/habilidades' },
     { label: 'Projetos', path: '/projetos' },
     { label: 'Contate-me', path: '/contato' }
@@ -42,12 +42,12 @@ function AppHeader() {
         </div>
 
         {/* Menu de navegação */}
-        <div className={`flex-col md:flex md:flex-row gap-4 absolute md:static bg-[#01161E] w-full md:w-auto left-0 md:left-auto p-4 md:p-0 top-16 md:top-0 ${isMenuOpen ? 'flex' : 'hidden'} md:flex`}>
+        <div className={`flex-col md:flex md:flex-row gap-8 absolute md:static bg-[#01161E] w-full md:w-auto left-0 md:left-auto p-4 md:p-0 top-16 md:top-0 ${isMenuOpen ? 'flex' : 'hidden'} md:flex`}>
           {menuItems.map((item) => (
             <button 
               key={item.label} 
               onClick={() => handleNavigation(item.path)} 
-              className="text-white hover:text-gray-400 transition-colors"
+              className="text-[#AEC3B0] hover:text-gray-400 transition-colors ibm-plex-mono-regular"
             >
               {item.label}
             </button>
