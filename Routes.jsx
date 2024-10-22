@@ -6,6 +6,7 @@ import Habilidades from "./src/pages/Habilidades";
 import Projetos from "./src/pages/Projetos";
 import ContateMe from "./src/pages/ContateMe";
 import AppHeader from './src/components/layout/AppHeader';
+import Footer from './src/components/layout/Footer';
 
 function AppRoutes() {
   return (
@@ -17,6 +18,7 @@ function AppRoutes() {
             <>
               <AppHeader isVisible={true} />
               <Layout />
+              <Footer></Footer>
             </>
           } 
         />
@@ -26,6 +28,7 @@ function AppRoutes() {
             <>
               <AppHeader isVisible={true} />
               <SobreMim />
+              <Footer></Footer>
             </>
           } 
         />
@@ -35,6 +38,7 @@ function AppRoutes() {
             <>
               <AppHeader isVisible={true} />
               <Habilidades />
+              <Footer></Footer>
             </>
           } 
         />
@@ -44,6 +48,7 @@ function AppRoutes() {
             <>
               <AppHeader isVisible={true} />
               <Projetos />
+              <Footer></Footer>
             </>
           } 
         />
@@ -53,6 +58,7 @@ function AppRoutes() {
             <>
               <AppHeader isVisible={true} />
               <ContateMe />
+              <Footer></Footer>
             </>
           } 
         />
