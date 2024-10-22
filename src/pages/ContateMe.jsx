@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
+import { Modal } from 'antd'; // Importando o Modal do Ant Design
 import CardContato from '../components/CardContato.jsx';
 
 const contacts = [
@@ -30,19 +31,32 @@ const contacts = [
 ];
 
 const ContateMe = () => {
+  const handleCardClick = (link) => {
+    Modal.confirm({
+      title: 'Confirmação',
+      content: `Você realmente deseja visitar o ${link}?`,
+      okText: 'Sim',
+      cancelText: 'Não',
+      onOk: () => {
+        // Redireciona para o link se o usuário clicar em "Ok"
+        window.open(link, '_blank');
+      },
+    });
+  };
+
   return (
     <section className="flex justify-center items-center bg-[#080808] w-full min-h-screen py-8">
       <div className="flex flex-col justify-center items-center w-full md:w-4/5">
         <h1 className="text-4xl font-bold text-white mb-6">Contate-me:</h1>
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4">
           {contacts.map((contact, index) => (
-            <CardContato 
-              key={index} 
-              icon={contact.icon} 
-              label={contact.label} 
-              link={contact.link} 
-              description={contact.description} 
-            />
+            <div key={index} onClick={() => handleCardClick(contact.link)}>
+              <CardContato 
+                icon={contact.icon} 
+                label={contact.label} 
+                description={contact.description} 
+              />
+            </div>
           ))}
         </div>
       </div>
