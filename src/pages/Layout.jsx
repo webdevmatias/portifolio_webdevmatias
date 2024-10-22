@@ -3,7 +3,7 @@ import AppHeader from "../components/layout/AppHeader";
 import SobreMim from "./SobreMim";
 import Habilidades from "./Habilidades";
 import Projetos from "./Projetos";
-import Contateme from "./Contateme";
+import ContateMe from "./ContateMe";
 import Home from "./Home";
 
 function Layout() {
@@ -15,7 +15,7 @@ function Layout() {
       <SobreMim></SobreMim>
       <Habilidades></Habilidades>
       <Projetos></Projetos>
-      <Contateme></Contateme>
+      <ContateMe></ContateMe>
     </>
   );
 }
