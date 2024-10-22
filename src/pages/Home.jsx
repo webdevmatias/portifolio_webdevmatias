@@ -1,6 +1,6 @@
 import React from "react";
 import { FaLinkedin, FaGithub } from 'react-icons/fa'; 
-import Button from '../components/home/Button.jsx';
+import Button from '../components/home/Button.jsx';                 
 import MatiasPic from '../assets/matias_pic.svg'
 
 const Home = () => {
