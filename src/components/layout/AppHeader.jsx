@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "../../../public/webdevmatias_logo1.svg";
+import Logo from "../../assets/webdevmatias_logo1.svg";
 import { useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa'; // Ícones de hambúrguer e fechar
 

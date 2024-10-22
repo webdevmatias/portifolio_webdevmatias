@@ -1,15 +1,31 @@
 import React from "react";
+import MatiasPic from '../assets/matias_pic.svg';
 
 const SobreMim = () => {
   return (
-    <section className="flex justify-center items-center">
-        <div className="flex justify-center items-center bg-[#080808] w-full md:w-4/5 min-h-screen">
-          <div className="flex justify-center items-center px-4 md:px-16">
-            <h1 className="text-4xl font-bold text-white mb-6">Sobre Mim:</h1>
+    <section className="flex justify-center items-center py-8 md:py-16">
+      <div className="flex justify-center items-center bg-[#080808] w-full md:w-4/5 min-h-screen rounded-lg shadow-lg">
+        <div className="flex flex-col justify-center items-center  px-4 md:px-40">
+          <h1 className="text-4xl font-bold text-white mb-10">Sobre Mim:</h1>
+          <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-8">
+            <div className="flex flex-col w-11/12 h-11/12">
+              <h2 className="text-white text-lg text-center md:text-left">
+                Olá, sou o <span className="text-[#FB8500] font-bold">Matias!</span>
+              </h2>
+              <p className="text-white text-base md:text-lg leading-relaxed text-center md:text-left">
+                Sou desenvolvedor Front-end com experiência em React.js, JavaScript, Tailwind, Ant Design, e consumo de APIs REST. Apaixonado pelo desenvolvimento de componentes reutilizáveis e boas práticas de UI/UX. Estudante de Ciência da Computação na UFRPE, com experiência em projetos acadêmicos e pessoais, além de participação em equipes que utilizam Metodologias Ágeis.
+              </p>
+            </div>
+            <img 
+              src={MatiasPic} // Ajuste o caminho da imagem conforme necessário
+              alt="foto do Matias"
+              className="rounded-lg w-40 h-40 md:w-60 md:h-60 border-b-8 border-[#FB8500] object-cover bg-white"
+            />
           </div>
         </div>
+      </div>
     </section>
   );
 };
 
-export default SobreMim
+export default SobreMim;

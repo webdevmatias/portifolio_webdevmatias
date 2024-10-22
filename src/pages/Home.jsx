@@ -1,7 +1,7 @@
 import React from "react";
 import { FaLinkedin, FaGithub } from 'react-icons/fa'; // Ícones do LinkedIn e GitHub
 import Button from '../components/home/Button.jsx'; // Importa o componente de botão
-import MatiasPic from '../../public/matias_pic.svg'
+import MatiasPic from '../assets/matias_pic.svg'
 
 const Home = () => {
   return (
