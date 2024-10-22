@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
-import { Modal } from 'antd'; // Importando o Modal do Ant Design
+import { Modal } from 'antd';
 import CardContato from '../components/CardContato.jsx';
 
 const contacts = [

@@ -1,47 +1,64 @@
 import React from "react";
 import CardProjetos from "../components/CardProjetos.jsx";
+import PromonitorImage from "../assets/promonitor-img.svg";
 
 const Projetos = () => {
   const projetos = [
     {
-      image: "https://via.placeholder.com/400x200",
-      title: "Projeto 1",
-      description: "Descrição do projeto 1.",
+      image: PromonitorImage,
+      title: "Promonitor",
+      description: "Um sistema de monitoria para universidades, que facilita a interação entre estudantes e monitores.",
+      isClickable: true, 
+      link: "https://github.com/HidraCode",
     },
     {
       image: "https://via.placeholder.com/400x200",
       title: "Projeto 2",
-      description: "Descrição do projeto 2.",
+      description: "Em produção.",
+      isClickable: false, 
+      link: "#",
     },
     {
       image: "https://via.placeholder.com/400x200",
       title: "Projeto 3",
-      description: "Descrição do projeto 3.",
+      description: "Em produção.",
+      isClickable: false,
+      link: "#",
     },
     {
       image: "https://via.placeholder.com/400x200",
       title: "Projeto 4",
       description: "Em produção.",
+      isClickable: false,
+      link: "#",
     },
     {
       image: "https://via.placeholder.com/400x200",
       title: "Projeto 5",
       description: "Em produção.",
+      isClickable: false,
+      link: "#",
     },
     {
       image: "https://via.placeholder.com/400x200",
       title: "Projeto 6",
       description: "Em produção.",
+      isClickable: false,
+      link: "#",
     },
     {
       image: "https://via.placeholder.com/400x200",
       title: "Projeto 7",
       description: "Em produção.",
+      isClickable: false,
+      link: "#",
     },
     {
       image: "https://via.placeholder.com/400x200", 
       title: "Projeto 8",
       description: "Em produção.",
+      isClickable: false,
+      link: "#",
     },
   ];
 
@@ -56,6 +73,8 @@ const Projetos = () => {
               image={projeto.image} 
               title={projeto.title} 
               description={projeto.description} 
+              isClickable={projeto.isClickable}
+              link={projeto.link}
             />
           ))}
         </div>
