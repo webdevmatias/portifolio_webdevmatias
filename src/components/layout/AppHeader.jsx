@@ -3,17 +3,17 @@ import Logo from "../../assets/webdevmatias_logo1.svg";
 import { useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa'; // Ícones de hambúrguer e fechar
 
-function AppHeader() {
+function AppHeader({ isVisible }) {  // Adiciona a prop isVisible
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Estado para controlar o menu
 
   // Lista de rotas e seus respectivos textos
   const menuItems = [
     { label: 'Home', path: '/' },
-    { label: 'Sobre_Mim', path: '/sobre' },
+    { label: 'Sobre_Mim', path: '/sobre-mim' }, 
     { label: 'Habilidades', path: '/habilidades' },
     { label: 'Projetos', path: '/projetos' },
-    { label: 'Contate-me', path: '/contato' }
+    { label: 'Contate-me', path: '/contate-me' }
   ];
 
   // Função de navegação reutilizável
@@ -26,6 +26,11 @@ function AppHeader() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  // Se isVisible for false, não renderiza o header
+  if (!isVisible) {
+    return null;
+  }
 
   return (
     <section className="fixed top-0 left-0 right-0 z-50 flex justify-center items-center">

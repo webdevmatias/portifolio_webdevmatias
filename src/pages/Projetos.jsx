@@ -46,7 +46,7 @@ const Projetos = () => {
   ];
 
   return (
-    <section className="flex justify-center items-center bg-[#080808] w-full min-h-screen py-8">
+    <section className="flex justify-center items-center bg-[#080808] w-full min-h-screen py-32">
       <div className="flex flex-col justify-center items-center w-full md:w-4/5">
         <h1 className="text-4xl font-bold text-white mb-12">Projetos:</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4">

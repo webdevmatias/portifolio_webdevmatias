@@ -10,7 +10,7 @@ function Layout() {
 
   return (
     <>
-      <AppHeader></AppHeader>
+      <AppHeader isVisible={true}></AppHeader>
       <Home></Home>
       <SobreMim></SobreMim>
       <Habilidades></Habilidades>
