@@ -3,7 +3,7 @@ import React from "react";
 const CardProjetos = ({ image, title, description }) => {
   return (
     <div 
-      className="relative flex flex-col justify-between bg-[#070707] rounded-md shadow-md border-b-4 mb-6"
+      className="relative flex flex-col justify-between bg-[#1e1e1e] rounded-md shadow-md border-b-4 mb-6"
       style={{ borderColor: '#FB8500' }}
     >
       <img src={image} alt={title} className="rounded-t-md h-40 w-full object-cover" />

@@ -6,7 +6,7 @@ import MatiasPic from '../assets/matias_pic.svg'
 const Home = () => {
   return (
     <section className="flex justify-center items-center">
-      <div className="flex flex-col justify-center items-center bg-black w-full md:w-4/5 min-h-screen">
+      <div className="flex flex-col justify-center items-center bg-[#080808] w-full md:w-4/5 min-h-screen">
         {/* Seção main */}
         <div className="flex flex-col-reverse md:flex-row justify-between items-center w-full px-16 md:px-40">
           {/* Seção de texto */}

@@ -23,7 +23,7 @@ const technologies = [
 const CardHabilidades = ({ icon, label }) => {
   return (
     <div 
-      className={`flex flex-col justify-center items-center px-4 py-2 my-2 border-b-4 rounded-md shadow-md bg-[#090909]`}
+      className={`flex flex-col justify-center items-center px-4 py-2 my-2 border-b-4 rounded-md shadow-md bg-[#1e1e1e]`}
       style={{
         borderColor: '#FB8500',  //  cor da borda
         color: '#FB8500',        //  cor do texto
@@ -40,7 +40,7 @@ const CardHabilidades = ({ icon, label }) => {
 const Habilidades = () => {
   return (
     <section className="flex justify-center items-center">
-      <div className="flex justify-center items-center bg-black w-full md:w-4/5 min-h-screen">
+      <div className="flex justify-center items-center bg-[#080808] w-full md:w-4/5 min-h-screen">
         <div className="flex flex-col justify-center items-center px-4 md:px-16">
           <h1 className="text-4xl text-white font-bold mb-12">Habilidades:</h1>
           <div className="flex flex-wrap justify-center gap-2">
