@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* index.css */
 @tailwind base;
@@ -9,18 +9,15 @@
 
 body{
     background-color: #080808;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 };
 
-
-.ibm-plex-mono-regular{
+/* ibm-plex-mono-regular */
+.ibm-font{
     font-family: "IBM Plex Mono", monospace;
     font-weight: 400;
     font-style: normal;
-  }  
-
-  .raleway-800{
-    font-family: "Raleway", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
-  }
+  } ;
