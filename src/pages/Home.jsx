@@ -1,6 +1,6 @@
 import React from "react";
-import { FaLinkedin, FaGithub } from 'react-icons/fa'; // Ícones do LinkedIn e GitHub
-import Button from '../components/home/Button.jsx'; // Importa o componente de botão
+import { FaLinkedin, FaGithub } from 'react-icons/fa'; 
+import Button from '../components/home/Button.jsx';
 import MatiasPic from '../assets/matias_pic.svg'
 
 const Home = () => {
@@ -21,17 +21,17 @@ const Home = () => {
               <Button 
                 icon={<FaLinkedin size={18} className="md:text-2xl" />} 
                 label="LinkedIn"
-                clickable={true}       // Botão clicável
-                color="#FB8500"        // Define a cor do botão
-                link="https://www.linkedin.com/in/matiaz/" // Link para LinkedIn
+                clickable={true}       
+                color="#FB8500"        
+                link="https://www.linkedin.com/in/matiaz/"
               />
               {/* Botão GitHub Clicável */}
               <Button 
                 icon={<FaGithub size={18} className="md:text-2xl" />} 
                 label="GitHub"
-                clickable={true}       // Botão clicável
-                color="#FB8500"        // Define a cor do botão
-                link="https://github.com/webdevmatias" // Link para GitHub
+                clickable={true}      
+                color="#FB8500"        
+                link="https://github.com/webdevmatias" 
               />
             </div>
           </div>

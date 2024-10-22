@@ -17,7 +17,7 @@ const SobreMim = () => {
               </p>
             </div>
             <img 
-              src={MatiasPic} // Ajuste o caminho da imagem conforme necessário
+              src={MatiasPic}
               alt="foto do Matias"
               className="rounded-lg w-40 h-40 md:w-60 md:h-60 border-b-8 border-[#FB8500] object-cover bg-white"
             />
