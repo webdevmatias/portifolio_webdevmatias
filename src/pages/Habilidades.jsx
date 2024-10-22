@@ -39,7 +39,7 @@ const CardHabilidades = ({ icon, label }) => {
 
 const Habilidades = () => {
   return (
-    <section className="flex justify-center items-center">
+    <section className="flex justify-center items-center py-16">
       <div className="flex justify-center items-center bg-[#080808] w-full md:w-4/5 min-h-screen">
         <div className="flex flex-col justify-center items-center px-4 md:px-16">
           <h1 className="text-4xl text-white font-bold mb-12">Habilidades:</h1>
