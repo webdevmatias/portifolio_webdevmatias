@@ -46,9 +46,9 @@ const Habilidades = () => {
   };
 
   return (
-    <section className="flex justify-center items-center py-16">
+    <section className="flex justify-center items-center py-24">
       <div className="flex justify-center items-center bg-[#080808] w-full md:w-4/5 min-h-screen">
-        <div className="flex flex-col justify-center items-center px-4 md:px-16">
+        <div className="flex flex-col justify-center items-center px-4 md:px-4">
           <h1 className="text-4xl text-white font-bold m-4">Habilidades:</h1>
           <p className="text-gray-500 mb-12">Clique para ativar/desativar os cards!</p>
           <div className="flex flex-wrap justify-center gap-4"> {/* Aumenta o espaço entre os cartões */}
