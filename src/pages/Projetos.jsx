@@ -1,60 +1,63 @@
 import React from "react";
 import CardProjetos from "../components/CardProjetos.jsx";
 import PromonitorImage from "../assets/promonitor-img.svg";
+import ComingSoonImage from "../assets/coming-soon.webp";
+import PortifolioImage from "../assets/portifolio.webp";
+import StooreImage from "../assets/stoore.webp";
 
 const Projetos = () => {
   const projetos = [
     {
       image: PromonitorImage,
       title: "Promonitor",
-      description: "Um sistema de monitoria para universidades, que facilita a interação entre estudantes e monitores.",
+      description: "Plataforma de gerenciamento do progama de monitoria da UFRPE.",
       isClickable: true, 
       link: "https://github.com/HidraCode",
     },
     {
-      image: "https://via.placeholder.com/400x200",
-      title: "Projeto 2",
-      description: "Em produção.",
-      isClickable: false, 
-      link: "#",
+      image: PortifolioImage,
+      title: "Portifólio Mattias",
+      description: "Portifólio do Mattias, feito com ReactJs.",
+      isClickable: true, 
+      link: "https://github.com/webdevmatias/portifolio_webdevmatias",
     },
     {
-      image: "https://via.placeholder.com/400x200",
-      title: "Projeto 3",
-      description: "Em produção.",
-      isClickable: false,
-      link: "#",
+      image: StooreImage,
+      title: "Stoore",
+      description: "E-comerce de eletronicos feito com ReactJs.",
+      isClickable: true,
+      link: "https://github.com/webdevmatias/stoore",
     },
     {
-      image: "https://via.placeholder.com/400x200",
+      image: ComingSoonImage,
       title: "Projeto 4",
       description: "Em produção.",
       isClickable: false,
       link: "#",
     },
     {
-      image: "https://via.placeholder.com/400x200",
+      image: ComingSoonImage,
       title: "Projeto 5",
       description: "Em produção.",
       isClickable: false,
       link: "#",
     },
     {
-      image: "https://via.placeholder.com/400x200",
+      image: ComingSoonImage,
       title: "Projeto 6",
       description: "Em produção.",
       isClickable: false,
       link: "#",
     },
     {
-      image: "https://via.placeholder.com/400x200",
+      image: ComingSoonImage,
       title: "Projeto 7",
       description: "Em produção.",
       isClickable: false,
       link: "#",
     },
     {
-      image: "https://via.placeholder.com/400x200", 
+      image: ComingSoonImage, 
       title: "Projeto 8",
       description: "Em produção.",
       isClickable: false,
@@ -63,7 +66,7 @@ const Projetos = () => {
   ];
 
   return (
-    <section className="flex justify-center items-center bg-[#080808] w-full min-h-screen py-32">
+    <section className="flex justify-center items-center bg-[#111111] w-full min-h-screen py-32">
       <div className="flex flex-col justify-center items-center w-full md:w-4/5">
         <h1 className="text-4xl font-bold text-white mb-4">Projetos:</h1>
         <p className="text-gray-500 mb-12 mx-8 text-center">Clique em "saiba mais" e acesse o repositório do projeto no Github!</p>

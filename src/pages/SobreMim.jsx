@@ -3,8 +3,8 @@ import MatiasPic from '../assets/matias_pic.svg';
 
 const SobreMim = () => {
   return (
-    <section className="flex justify-center items-center py-8 md:py-16">
-      <div className="flex justify-center items-center bg-[#080808] w-full md:w-4/5 min-h-screen rounded-lg shadow-lg">
+    <section className="flex justify-center items-center bg-[#111111] py-8 md:py-16 w-full min-h-screenl">
+      <div className="flex justify-center items-center md:w-4/5 min-h-screen rounded-lg shadow-lg">
         <div className="flex flex-col justify-center items-center px-4 md:px-40">
           <h1 className="text-4xl font-bold text-white mb-10">Sobre Mim:</h1>
           <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-8">
