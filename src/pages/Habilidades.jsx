@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { FaReact, FaJs, FaCss3Alt, FaGitAlt } from 'react-icons/fa'; 
-import { SiTailwindcss, SiAntdesign, SiMysql, SiPostman, SiNodedotjs, SiExpress, SiGithub, SiVite, SiFigma } from 'react-icons/si'; 
+import { SiTailwindcss, SiAntdesign, SiMysql, SiPostman, SiNodedotjs, SiExpress, SiGithub, SiVite, SiFigma, SiSequelize, SiPostgresql, SiTypescript, SiNestjs } from 'react-icons/si'; 
 import { MdDesignServices } from 'react-icons/md'; 
 
+// Lista das tecnologias com ícone, nome e descrição
 const technologies = [
   { icon: <FaReact size={40} />, label: "React.js", description: "Uma biblioteca para construir interfaces de usuário." },
   { icon: <FaJs size={40} />, label: "JavaScript", description: "Uma linguagem de programação essencial para desenvolvimento web." },
@@ -11,23 +12,28 @@ const technologies = [
   { icon: <SiTailwindcss size={40} />, label: "Tailwind", description: "Um framework CSS utilitário para estilização rápida." },
   { icon: <SiAntdesign size={40} />, label: "Ant Design", description: "Uma biblioteca de componentes UI para React." },
   { icon: <SiMysql size={40} />, label: "MySQL", description: "Um sistema de gerenciamento de banco de dados relacional." },
+  { icon: <SiPostgresql size={40} />, label: "PostgreSQL", description: "Banco de dados relacional avançado, open source." },
+  { icon: <SiSequelize size={40} />, label: "Sequelize", description: "ORM para Node.js, suportando diversos bancos de dados." },
   { icon: <SiPostman size={40} />, label: "Postman", description: "Uma ferramenta para testar APIs." },
   { icon: <SiNodedotjs size={40} />, label: "Node.js", description: "Ambiente de execução para JavaScript no lado do servidor." },
   { icon: <SiExpress size={40} />, label: "Express", description: "Um framework para aplicações web em Node.js." },
+  { icon: <SiNestjs size={40} />, label: "NestJS", description: "Framework Node.js para construção de APIs escaláveis e robustas." },
+  { icon: <SiTypescript size={40} />, label: "TypeScript", description: "Superset do JavaScript que adiciona tipagem estática." },
   { icon: <SiGithub size={40} />, label: "GitHub", description: "Plataforma de hospedagem de código usando Git." },
   { icon: <SiVite size={40} />, label: "Vite", description: "Um build tool que oferece um ambiente de desenvolvimento rápido." },
   { icon: <MdDesignServices size={40} />, label: "UI/UX", description: "Design de interfaces e experiência do usuário." },
   { icon: <SiFigma size={40} />, label: "Figma", description: "Ferramenta de design colaborativo na web." },
 ];
 
+// Componente para cada card de habilidade
 const CardHabilidades = ({ icon, label, description, isActive, onClick }) => {
   return (
     <div 
       className={`flex flex-col justify-center items-center px-4 py-2 my-2 border-b-4 rounded-md shadow-md transition-all duration-300 ${isActive ? 'bg-white text-black scale-110 mb-4' : 'bg-[#1e1e1e] text-[#FB8500]'}`}
       style={{
         borderColor: isActive ? '#FB8500' : 'transparent',
-        width: isActive ? '140px' : '120px', // largura maior quando ativo
-        height: isActive ? '160px' : '140px', // altura maior quando ativo
+        width: isActive ? '140px' : '120px', 
+        height: isActive ? '160px' : '140px', 
       }}
       onClick={onClick}
     >
@@ -38,11 +44,12 @@ const CardHabilidades = ({ icon, label, description, isActive, onClick }) => {
   );
 };
 
+// Componente principal de habilidades
 const Habilidades = () => {
-  const [activeIndex, setActiveIndex] = useState(null); // Estado para controlar qual tecnologia está ativa
+  const [activeIndex, setActiveIndex] = useState(null); // Controla o card ativo
 
   const handleCardClick = (index) => {
-    setActiveIndex(activeIndex === index ? null : index); // Alterna entre ativo e inativo
+    setActiveIndex(activeIndex === index ? null : index); 
   };
 
   return (
@@ -51,7 +58,7 @@ const Habilidades = () => {
         <div className="flex flex-col justify-center items-center px-4 md:px-4">
           <h1 className="text-4xl text-white font-bold m-4">Habilidades:</h1>
           <p className="text-gray-500 mb-12">Clique para ativar/desativar os cards!</p>
-          <div className="flex flex-wrap justify-center gap-4"> {/* Aumenta o espaço entre os cartões */}
+          <div className="flex flex-wrap justify-center gap-4">
             {technologies.map((tech, index) => (
               <CardHabilidades 
                 key={index} 

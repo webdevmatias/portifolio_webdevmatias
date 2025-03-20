@@ -3,16 +3,32 @@ import CardProjetos from "../components/CardProjetos.jsx";
 import PromonitorImage from "../assets/promonitor-img.svg";
 import ComingSoonImage from "../assets/coming-soon.webp";
 import PortifolioImage from "../assets/portifolio.webp";
-import StooreImage from "../assets/stoore.webp";
+import EcotrilhaImage from "../assets/logo-ecotrilha.svg";
+import MeetSpaceLogo from "../assets/meetspace-logo.svg";
+import StooreImage from "../assets/stoore-logo.svg";
 
 const Projetos = () => {
   const projetos = [
+    {
+      image: EcotrilhaImage,
+      title: "Ecotrilha",
+      description: "Plataforma de para a realização de trilhas na Região Metropolitana do Recife.",
+      isClickable: true,
+      link: "https://github.com/EcoTrilha",
+    },
     {
       image: PromonitorImage,
       title: "Promonitor",
       description: "Plataforma de gerenciamento do progama de monitoria da UFRPE.",
       isClickable: true, 
       link: "https://github.com/HidraCode",
+    },
+    {
+      image: MeetSpaceLogo,
+      title: "MeetSpace",
+      description: "Sistema distribuido de agendamento de salas de reunião.",
+      isClickable: true,
+      link: "https://github.com/MeetSpaceUFRPE",
     },
     {
       image: PortifolioImage,
@@ -27,20 +43,6 @@ const Projetos = () => {
       description: "E-comerce de eletronicos feito com ReactJs.",
       isClickable: true,
       link: "https://github.com/webdevmatias/stoore",
-    },
-    {
-      image: ComingSoonImage,
-      title: "Projeto 4",
-      description: "Em produção.",
-      isClickable: false,
-      link: "#",
-    },
-    {
-      image: ComingSoonImage,
-      title: "Projeto 5",
-      description: "Em produção.",
-      isClickable: false,
-      link: "#",
     },
     {
       image: ComingSoonImage,
