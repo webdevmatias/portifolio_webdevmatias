@@ -40,7 +40,7 @@ const Home = () => {
             <img 
               src={MatiasPic} 
               alt="Foto do Matias" 
-              className="rounded-full w-40 h-40 md:w-60 md:h-60 object-cover bg-yellow-500"
+              className="rounded-full w-40 h-40 md:w-60 md:h-60 object-cover"
             />
           </div>
         </div>

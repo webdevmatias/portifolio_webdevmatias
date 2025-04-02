@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaReact, FaJs, FaCss3Alt, FaGitAlt } from 'react-icons/fa'; 
-import { SiTailwindcss, SiAntdesign, SiMysql, SiPostman, SiNodedotjs, SiExpress, SiGithub, SiVite, SiFigma, SiSequelize, SiPostgresql, SiTypescript, SiNestjs } from 'react-icons/si'; 
+import { SiTailwindcss, SiAntdesign, SiMysql, SiPostman, SiNodedotjs, SiExpress, SiGithub, SiVite, SiFigma, SiSequelize, SiPostgresql, SiTypescript, SiNestjs, SiDocker, SiRedis } from 'react-icons/si'; 
 import { MdDesignServices } from 'react-icons/md'; 
 
 // Lista das tecnologias com ícone, nome e descrição
@@ -11,7 +11,7 @@ const technologies = [
   { icon: <FaGitAlt size={40} />, label: "Git", description: "Sistema de controle de versão para gerenciamento de código." },
   { icon: <SiTailwindcss size={40} />, label: "Tailwind", description: "Um framework CSS utilitário para estilização rápida." },
   { icon: <SiAntdesign size={40} />, label: "Ant Design", description: "Uma biblioteca de componentes UI para React." },
-  { icon: <SiMysql size={40} />, label: "MySQL", description: "Um sistema de gerenciamento de banco de dados relacional." },
+  { icon: <SiMysql size={60} />, label: "MySQL", description: "Um sistema de gerenciamento de banco de dados relacional." },
   { icon: <SiPostgresql size={40} />, label: "PostgreSQL", description: "Banco de dados relacional avançado, open source." },
   { icon: <SiSequelize size={40} />, label: "Sequelize", description: "ORM para Node.js, suportando diversos bancos de dados." },
   { icon: <SiPostman size={40} />, label: "Postman", description: "Uma ferramenta para testar APIs." },
@@ -19,9 +19,9 @@ const technologies = [
   { icon: <SiExpress size={40} />, label: "Express", description: "Um framework para aplicações web em Node.js." },
   { icon: <SiNestjs size={40} />, label: "NestJS", description: "Framework Node.js para construção de APIs escaláveis e robustas." },
   { icon: <SiTypescript size={40} />, label: "TypeScript", description: "Superset do JavaScript que adiciona tipagem estática." },
-  { icon: <SiGithub size={40} />, label: "GitHub", description: "Plataforma de hospedagem de código usando Git." },
+  { icon: <SiDocker size={40} />, label: "Docker", description: "Plataforma para desenvolvimento, envio e execução de aplicações." },
+  { icon: <SiRedis size={40} />, label: "Redis", description: "Banco de dados em memória de código aberto." },
   { icon: <SiVite size={40} />, label: "Vite", description: "Um build tool que oferece um ambiente de desenvolvimento rápido." },
-  { icon: <MdDesignServices size={40} />, label: "UI/UX", description: "Design de interfaces e experiência do usuário." },
   { icon: <SiFigma size={40} />, label: "Figma", description: "Ferramenta de design colaborativo na web." },
 ];
 
@@ -29,9 +29,9 @@ const technologies = [
 const CardHabilidades = ({ icon, label, description, isActive, onClick }) => {
   return (
     <div 
-      className={`flex flex-col justify-center items-center px-4 py-2 my-2 border-b-4 rounded-md shadow-md transition-all duration-300 ${isActive ? 'bg-white text-black scale-110 mb-4' : 'bg-[#1e1e1e] text-[#FB8500]'}`}
+      className={`flex flex-col justify-center items-center px-4 py-2 border-b-4 rounded-md shadow-md transition-all duration-300 ${isActive ? 'bg-white text-black scale-110 mb-4' : 'bg-[#1e1e1e] text-[#FB8500]'}`}
       style={{
-        borderColor: isActive ? '#FB8500' : 'transparent',
+        borderColor: isActive ? 'transparent' : 'transparent',
         width: isActive ? '140px' : '120px', 
         height: isActive ? '160px' : '140px', 
       }}
