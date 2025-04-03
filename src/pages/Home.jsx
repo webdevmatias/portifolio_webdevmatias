@@ -14,7 +14,7 @@ const Home = () => {
             <h1 className="ibm-font text-3xl md:text-4xl lg:text-5xl">Olá, eu sou o</h1>
             <h1 className="ibm-font text-5xl md:text-6xl lg:text-7xl font-bold text-[#FB8500]">MATIAS!</h1>
             <h2 className="ibm-plex-mono-regular text-sm md:text-base lg:text-lg">
-              Desenvolvedor Front-End
+              Desenvolvedor Full Stack
             </h2>
             <div className="flex flex-col md:flex-row justify-center md:gap-4 md:justify-start mt-4">
               {/* Botão LinkedIn Clicável */}
