@@ -10,10 +10,10 @@ function AppHeader({ isVisible }) {  // Adiciona a prop isVisible
   // Lista de rotas e seus respectivos textos
   const menuItems = [
     { label: 'Home', path: '/' },
-    { label: 'Sobre_Mim', path: '/sobre-mim' }, 
+    { label: 'Sobre', path: '/sobre-mim' }, 
     { label: 'Habilidades', path: '/habilidades' },
     { label: 'Projetos', path: '/projetos' },
-    { label: 'Contate-me', path: '/contate-me' }
+    { label: 'Contato', path: '/contate-me' }
   ];
 
   // Função de navegação reutilizável
