@@ -1,14 +1,27 @@
 import React from "react";
 import CardProjetos from "../components/CardProjetos.jsx";
 import PromonitorImage from "../assets/promonitor-img.svg";
-import ComingSoonImage from "../assets/coming-soon.webp";
-import PortifolioImage from "../assets/portifolio.webp";
+import AmargemImage from "../assets/amargem.png";
+import SigparImage from "../assets/sigpar.png";
 import EcotrilhaImage from "../assets/logo-ecotrilha.svg";
 import MeetSpaceLogo from "../assets/meetspace-logo.svg";
 import StooreImage from "../assets/stoore-logo.svg";
 
 const Projetos = () => {
   const projetos = [
+    {
+      image: SigparImage,
+      title: "Sigpar",
+      description: "Sistema de gerenciamento de projetos e planos de trabalho para o instituto Ipê UFRPE.",
+      isClickable: false,
+    },
+    {
+      image: AmargemImage,
+      title: "Amargem",
+      description: "Portifolio do primeiro grupo de teatro hip-hop de Pernambuco.",
+      isClickable: true,
+      link: "https://amargem.com.br/",
+    },
     {
       image: EcotrilhaImage,
       title: "Ecotrilha",
@@ -31,40 +44,12 @@ const Projetos = () => {
       link: "https://github.com/MeetSpaceUFRPE",
     },
     {
-      image: PortifolioImage,
-      title: "Portifólio Mattias",
-      description: "Portifólio do Mattias, feito com ReactJs.",
-      isClickable: true, 
-      link: "https://github.com/webdevmatias/portifolio_webdevmatias",
-    },
-    {
       image: StooreImage,
       title: "Stoore",
       description: "E-comerce de eletronicos feito com ReactJs.",
       isClickable: true,
       link: "https://github.com/webdevmatias/stoore",
-    },
-    {
-      image: ComingSoonImage,
-      title: "Projeto 6",
-      description: "Em produção.",
-      isClickable: false,
-      link: "#",
-    },
-    {
-      image: ComingSoonImage,
-      title: "Projeto 7",
-      description: "Em produção.",
-      isClickable: false,
-      link: "#",
-    },
-    {
-      image: ComingSoonImage, 
-      title: "Projeto 8",
-      description: "Em produção.",
-      isClickable: false,
-      link: "#",
-    },
+    }
   ];
 
   return (
