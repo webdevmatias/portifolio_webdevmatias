@@ -1,5 +1,5 @@
 import React from "react";
-import MatiasPic from "../assets/matias_pic.svg";
+import MatiasPic from "../assets/matias-pic.png";
 
 const SobreMim = () => {
   return (
@@ -45,7 +45,7 @@ const SobreMim = () => {
             <img
               src={MatiasPic}
               alt="foto do Matias"
-              className="rounded-lg w-40 h-40 md:w-60 md:h-60 border-b-8 border-[#FB8500] object-cover"
+              className="rounded-lg w-40 h-40 md:w-60 md:h-60 object-cover"
             />
           </div>
         </div>
