@@ -47,7 +47,7 @@ const CardHabilidades = ({ icon, label, description, isActive, onClick }) => (
     className={`flex flex-col justify-center items-center 
     bg-[#1e1e1e] text-[#FB8500] rounded-xl border border-transparent 
     hover:shadow-[0_0_15px_#FB8500] hover:scale-105 cursor-pointer
-    transition-all duration-300 aspect-square w-36 sm:w-40 md:w-44 p-4 md:p-6`}
+    transition-all duration-300 aspect-square w-40 md:w-36 p-4 md:p-6 mb-8 md:mb-6`}
   >
     <div className="flex flex-col items-center text-center">
       {icon}
@@ -70,14 +70,14 @@ export default function Habilidades() {
   return (
     <section className="flex justify-center items-center py-24 bg-[#080808]">
       <div className="w-11/12 md:w-4/5">
-        <h1 className="text-4xl text-center font-bold text-white mb-6">
+        <h1 className="text-4xl text-center font-bold text-white mb-2">
           Habilidades
         </h1>
         <p className="text-center text-gray-400 mb-12">
           Clique para ver mais detalhes.
         </p>
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-8 justify-items-center">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] justify-items-center">
           {technologies.map((tech, index) => (
             <CardHabilidades
               key={index}
