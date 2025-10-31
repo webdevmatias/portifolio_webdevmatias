@@ -39,13 +39,13 @@ const Home = () => {
         {/* Texto */}
         <div className="flex flex-col text-white text-center md:text-left">
           <h1 className="ibm-font text-5xl md:text-6xl lg:text-7xl font-bold text-[#FB8500] m-0 leading-none">
-            MATIAS!
+            MATTIAS
           </h1>
-          <h2 className="ibm-plex-mono-regular text-sm md:text-base lg:text-lg m-0 leading-none">
+          <h2 className="ibm-plex-mono-regular text-sm md:text-base ml-1 lg:text-lg mt-2 md:mt-0 leading-none">
             Desenvolvedor Full Stack
           </h2>
 
-          <div className="flex flex-col md:flex-row justify-center md:justify-start gap-2">
+          <div className="flex flex-col md:flex-row justify-center md:justify-start mt-4 gap-2">
             <Button
               icon={<FaLinkedin size={20} />}
               label="LinkedIn"
