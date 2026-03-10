@@ -29,7 +29,11 @@ const Home = () => {
       <div className="relative z-10 flex flex-col md:flex-row gap-6 justify-center items-center max-w-screen px-6 py-8">
         {/* Imagem */}
         <div className="w-[220px] flex justify-center py-2">
-          <img src={MatiasPic} alt="Foto do Matias" className="rounded-full" />
+          <img
+            src={MatiasPic}
+            alt="Foto do Matias"
+            className="rounded-full bg-cyan-500"
+          />
         </div>
 
         {/* Texto */}
