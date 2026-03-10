@@ -8,13 +8,13 @@ const Home = () => {
   return (
     <section className="relative flex justify-center items-center min-h-screen bg-[#080808] overflow-hidden">
       {/* Fundo de partículas ocupando toda a seção */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className="absolute inset-0 bg-[#080808] w-full h-full">
         <Particles
           className="absolute inset-0" // <- ocupa toda a seção
           particleColors={["#FB8500", "#FB8500"]}
-          particleCount={100}
+          particleCount={50}
           particleSpread={10}
-          speed={0.1}
+          speed={0.3}
           particleBaseSize={100}
           sizeRandomness={1}
           moveParticlesOnHover={false} // se quiser interagir com o mouse
@@ -32,7 +32,7 @@ const Home = () => {
           <img
             src={MatiasPic}
             alt="Foto do Matias"
-            className="rounded-full bg-cyan-500"
+            className="rounded-full bg-[#01161E]"
           />
         </div>
 
