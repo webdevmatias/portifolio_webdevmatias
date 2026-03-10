@@ -1,7 +1,7 @@
 import React from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import Button from "../components/home/Button.jsx";
-import MatiasPic from "../assets/matias-pic.png";
+import MatiasPic from "../assets/matias-pic.avif";
 import Particles from "../components/home/Particles";
 
 const Home = () => {
@@ -10,14 +10,14 @@ const Home = () => {
       {/* Fundo de partículas ocupando toda a seção */}
       <div className="absolute inset-0 w-full h-full">
         <Particles
-          className="absolute inset-0"          // <- ocupa toda a seção
+          className="absolute inset-0" // <- ocupa toda a seção
           particleColors={["#FB8500", "#FB8500"]}
-          particleCount={200}
+          particleCount={100}
           particleSpread={10}
           speed={0.1}
           particleBaseSize={100}
           sizeRandomness={1}
-          moveParticlesOnHover={false}           // se quiser interagir com o mouse
+          moveParticlesOnHover={false} // se quiser interagir com o mouse
           particleHoverFactor={1}
           alphaParticles={false}
           cameraDistance={20}
@@ -29,11 +29,7 @@ const Home = () => {
       <div className="relative z-10 flex flex-col md:flex-row gap-6 justify-center items-center max-w-screen px-6 py-8">
         {/* Imagem */}
         <div className="w-[220px] flex justify-center py-2">
-          <img
-            src={MatiasPic}
-            alt="Foto do Matias"
-            className="rounded-full"
-          />
+          <img src={MatiasPic} alt="Foto do Matias" className="rounded-full" />
         </div>
 
         {/* Texto */}
