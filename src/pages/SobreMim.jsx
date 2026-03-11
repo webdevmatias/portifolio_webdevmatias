@@ -1,54 +1,67 @@
-import React from "react";
 import MatiasPic from "../assets/matias-pic.avif";
+import { HiArrowUpRight } from "react-icons/hi2";
 
-const SobreMim = () => {
-  return (
-    <section className="flex justify-center items-center bg-[#111111] py-8 md:py-16 w-full">
-      <div className="flex justify-center items-center md:w-4/5 min-h-screen rounded-lg">
-        <div className="flex flex-col justify-center items-center px-4 md:px-40">
-          <h1 className="text-4xl font-bold text-white mb-10">Sobre Mim:</h1>
+const INTERESTS = [
+  "Design de Interfaces",
+  "Software Architecture",
+  "Systems Design",
+];
 
-          {/* Card principal */}
-          <div className="flex flex-col-reverse md:flex-row bg-transparent md:bg-[#01161E] px-8 py-4 rounded-lg justify-center items-center gap-8">
-            {/* Texto */}
-            <div className="flex flex-col w-full h-11/12">
-              <p className="text-white text-base md:text-md leading-relaxed text-center md:text-left">
-                Sou <span className="text-[#FB8500]">Lucas Mattias</span>,
-                estudante de Ciência da Computação na UFRPE. Gosto de
-                transformar ideias em aplicações web com foco em desempenho,
-                clareza e boas práticas de desenvolvimento.
-              </p>
+const SobreMim = () => (
+  <section className="flex min-h-screen justify-center items-center bg-[#0e0e0e] py-16 px-4 w-full">
+    <div className="w-full max-w-4xl flex flex-col gap-6">
+      <h2 className="text-2xl text-white text-center font-light uppercase">
+        Sobre Mim :
+      </h2>
 
-              <p className="text-white text-base md:text-md leading-relaxed text-center md:text-left mt-4">
-                Trabalho com <span className="text-[#FB8500]">React.js</span>,{" "}
-                <span className="text-[#FB8500]">Next.js</span> e{" "}
-                <span className="text-[#FB8500]">TailwindCSS</span> no
-                front-end, e <span className="text-[#FB8500]">NestJS</span> e{" "}
-                <span className="text-[#FB8500]">Express</span> no back-end,
-                conectando bancos como{" "}
-                <span className="text-[#FB8500]">PostgreSQL</span> e{" "}
-                <span className="text-[#FB8500]">MySQL</span>.
-              </p>
-
-              <p className="text-white text-base md:text-md leading-relaxed text-center md:text-left mt-4">
-                Tenho interesse em{" "}
-                <span className="text-[#FB8500]">arquitetura de software</span>{" "}
-                e <span className="text-[#FB8500]">design de interfaces</span>,
-                buscando sempre criar soluções simples, bonitas e funcionais.
-              </p>
-            </div>
-
-            {/* Foto */}
+      <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-6 flex flex-col md:flex-row items-center gap-8">
+        {/* Foto */}
+        <div className="shrink-0 flex justify-center">
+          <div className="w-44 h-44 md:w-52 md:h-52 rounded-full ring-2 ring-[#FB8500]/40 ring-offset-2 ring-offset-[#080808] overflow-hidden">
             <img
               src={MatiasPic}
-              alt="foto do Matias"
-              className="rounded-full w-40 h-40 md:w-60 md:h-60 object-cover"
+              alt="Lucas Mattias"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
+
+        {/* Conteúdo */}
+        <div className="flex flex-col gap-5 flex-1 text-center md:text-left">
+          <div className="flex flex-col gap-1.5">
+            <h3 className="text-white space-y-2 font-semibold text-base">
+              <p className="pb-1 text-lg"> Lucas Matias</p>
+              <span className="text-xs text-[#FB8500]/50 uppercase">
+                <p>{"< Full Stack Developer />"}</p>{" "}
+              </span>
+            </h3>
+            <p className="text-sm text-gray-400 leading-relaxed">
+              Estudante de Ciência da Computação na UFRPE. Construo aplicações
+              web completas, do banco de dados à interface, com foco em
+              desempenho, clareza e boas práticas.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <p className="text-xs text-gray-600 uppercase tracking-widest">
+              Interesses :
+            </p>
+            <div className="flex flex-wrap justify-center md:justify-start gap-2">
+              {INTERESTS.map((item) => (
+                <span
+                  key={item}
+                  className="flex items-center gap-1 text-xs text-[#FB8500] bg-[#FB8500]/10 border border-[#FB8500]/25 px-3 py-1 rounded-full"
+                >
+                  <HiArrowUpRight size={10} />
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default SobreMim;

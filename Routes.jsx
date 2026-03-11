@@ -1,66 +1,73 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Layout from './src/pages/Layout';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Layout from "./src/pages/Layout";
 import SobreMim from "./src/pages/SobreMim";
 import Habilidades from "./src/pages/Habilidades";
 import Projetos from "./src/pages/Projetos";
+import ProjetoDetalhe from "./src/pages/ProjetoDetalhe";
 import ContateMe from "./src/pages/ContateMe";
-import AppHeader from './src/components/layout/AppHeader';
-import Footer from './src/components/layout/Footer';
+import AppHeader from "./src/components/layout/AppHeader";
+import Footer from "./src/components/layout/Footer";
+
+const WithLayout = ({ children }) => (
+  <>
+    <AppHeader isVisible={true} />
+    {children}
+    <Footer />
+  </>
+);
 
 function AppRoutes() {
   return (
     <Router>
       <Routes>
-        <Route 
-          path="/" 
+        <Route
+          path="/"
           element={
-            <>
-              <AppHeader isVisible={true} />
+            <WithLayout>
               <Layout />
-              <Footer></Footer>
-            </>
-          } 
+            </WithLayout>
+          }
         />
-        <Route 
-          path="/sobre-mim" 
+        <Route
+          path="/sobre-mim"
           element={
-            <>
-              <AppHeader isVisible={true} />
+            <WithLayout>
               <SobreMim />
-              <Footer></Footer>
-            </>
-          } 
+            </WithLayout>
+          }
         />
-        <Route 
-          path="/habilidades" 
+        <Route
+          path="/habilidades"
           element={
-            <>
-              <AppHeader isVisible={true} />
+            <WithLayout>
               <Habilidades />
-              <Footer></Footer>
-            </>
-          } 
+            </WithLayout>
+          }
         />
-        <Route 
-          path="/projetos" 
+        <Route
+          path="/projetos"
           element={
-            <>
-              <AppHeader isVisible={true} />
+            <WithLayout>
               <Projetos />
-              <Footer></Footer>
-            </>
-          } 
+            </WithLayout>
+          }
         />
-        <Route 
-          path="/contate-me" 
+        <Route
+          path="/projetos/:slug"
           element={
-            <>
-              <AppHeader isVisible={true} />
+            <WithLayout>
+              <ProjetoDetalhe />
+            </WithLayout>
+          }
+        />
+        <Route
+          path="/contate-me"
+          element={
+            <WithLayout>
               <ContateMe />
-              <Footer></Footer>
-            </>
-          } 
+            </WithLayout>
+          }
         />
       </Routes>
     </Router>
