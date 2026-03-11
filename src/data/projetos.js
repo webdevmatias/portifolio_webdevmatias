@@ -30,7 +30,7 @@ export const PROJETOS = [
     summary:
       "Sistema institucional para o Instituto Ipê (UFRPE), voltado ao gerenciamento de parcerias, planos de trabalho e execução orçamentária com a universidade",
     description:
-      "O SIGPAR foi desenvolvido para digitalizar e centralizar os processos administrativos do Instituto Ipê na UFRPE. O sistema permite o cadastro e acompanhamento de projetos de extensão, controle de planos de trabalho de bolsistas e voluntários, além da gestão completa da execução orçamentária com geração de relatórios institucionais.",
+      "O Sistema Integrado de Gestão de Parcerias (SIGP-UFRPE) tem como objetivo automatizar e otimizar a gestão de parcerias da Universidade Federal Rural de Pernambuco (UFRPE), em conformidade com as Resolução vigentes. A plataforma integrará todas as etapas do ciclo de vida das parcerias, desde a celebração, passando pelo acompanhamento, até a prestação de contas, garantindo eficiência, transparência e alinhamento legal. O sistema será utilizado pela equipe técnica do Instituto IPÊ da UFRPE (Instituto de Inovação, Pesquisa, Empreendedorismo, Internacionalização e Relações Institucionais), coordenadores de projetos, Fundação de Apoio e gestores, com funcionalidades adaptadas às necessidades de cada perfil.",
     isClickable: false,
     link: null,
     tecnologias: [
