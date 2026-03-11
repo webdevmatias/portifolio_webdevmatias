@@ -18,9 +18,14 @@ export default function Habilidades() {
   return (
     <section className="flex min-h-screen flex-col items-center gap-8 justify-center py-16 bg-[#080808] px-4">
       {/* Header */}
-      <h2 className="text-2xl text-white uppercase font-light">
-        Habilidades :{" "}
-      </h2>
+      <div className="text-center flex flex-col gap-2">
+        <h2 className="text-2xl text-white uppercase font-light">
+          Habilidades :{" "}
+        </h2>
+        <p className="text-gray-500 text-sm">
+          Clique para filtrar, ou ver descrição.
+        </p>
+      </div>
 
       {/* Filtro por categoria */}
       <div className="flex flex-wrap justify-center gap-2">

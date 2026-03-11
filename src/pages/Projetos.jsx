@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PROJETOS } from "../data/projetos";
-import { HiArrowUpRight } from "react-icons/hi2";
+import { HiArrowUpRight, HiChevronDown } from "react-icons/hi2";
 
 const TIPO_COLORS = {
   Institucional: "text-blue-400 bg-blue-400/10 border-blue-400/20",
@@ -11,9 +12,15 @@ const TIPO_COLORS = {
 };
 
 const LIMIT = 5;
+const INITIAL = 3;
+const STEP = 3;
 
 const Projetos = () => {
   const navigate = useNavigate();
+  const [visible, setVisible] = useState(INITIAL);
+
+  const shown = PROJETOS.slice(0, visible);
+  const hasMore = visible < PROJETOS.length;
 
   return (
     <section className="flex justify-center bg-[#0e0e0e] w-full min-h-screen py-24 px-4">
@@ -28,9 +35,9 @@ const Projetos = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {PROJETOS.map((projeto) => {
+          {shown.map((projeto) => {
             const techs = projeto.tecnologias;
-            const visible = techs.slice(0, LIMIT);
+            const visibleTechs = techs.slice(0, LIMIT);
             const remaining = techs.length - LIMIT;
 
             return (
@@ -39,7 +46,6 @@ const Projetos = () => {
                 onClick={() => navigate(`/projetos/${projeto.slug}`)}
                 className="group cursor-pointer flex flex-col bg-white/[0.03] border border-white/5 rounded-2xl overflow-hidden hover:border-[#FB8500]/40 transition-all duration-200 h-full"
               >
-                {/* Imagem — altura fixa */}
                 <div className="h-44 w-full bg-white/[0.02] border-b border-white/5 flex items-center justify-center p-3 shrink-0">
                   <img
                     src={projeto.image}
@@ -48,7 +54,6 @@ const Projetos = () => {
                   />
                 </div>
 
-                {/* Corpo — flex-1 para ocupar o espaço restante */}
                 <div className="flex flex-col gap-3 p-5 flex-1">
                   <div className="flex items-center justify-between gap-2">
                     <h3 className="text-white font-semibold text-base truncate">
@@ -61,14 +66,12 @@ const Projetos = () => {
                     </span>
                   </div>
 
-                  {/* Descrição com altura fixa para alinhar os cards */}
                   <p className="text-xs text-gray-500 leading-relaxed line-clamp-3 flex-1">
                     {projeto.summary}
                   </p>
 
-                  {/* Techs com ícones */}
                   <div className="flex flex-wrap items-center gap-2 pt-3 border-t border-white/5">
-                    {visible.map(({ label, Icon }) => (
+                    {visibleTechs.map(({ label, Icon }) => (
                       <span
                         key={label}
                         title={label}
@@ -85,7 +88,6 @@ const Projetos = () => {
                   </div>
                 </div>
 
-                {/* Footer — sempre no fundo */}
                 <div className="px-5 py-3 border-t border-white/5 flex items-center justify-between shrink-0">
                   <span className="text-xs text-gray-600">Ver detalhes</span>
                   <HiArrowUpRight
@@ -96,6 +98,30 @@ const Projetos = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* Ver mais / Ocultar */}
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-xs text-gray-600">
+            Exibindo {shown.length} de {PROJETOS.length}
+          </span>
+          {hasMore ? (
+            <button
+              onClick={() => setVisible((v) => v + STEP)}
+              className="flex items-center gap-2 border border-white/10 hover:border-[#FB8500]/40 text-gray-400 hover:text-white text-sm px-5 py-2.5 rounded-xl transition-all duration-200 bg-white/[0.02] hover:bg-white/[0.04]"
+            >
+              <HiChevronDown size={15} />
+              Ver mais projetos
+            </button>
+          ) : (
+            <button
+              onClick={() => setVisible(INITIAL)}
+              className="flex items-center gap-2 border border-white/10 hover:border-white/20 text-gray-600 hover:text-gray-400 text-sm px-5 py-2.5 rounded-xl transition-all duration-200 bg-white/[0.02]"
+            >
+              <HiChevronDown size={15} className="rotate-180" />
+              Ocultar
+            </button>
+          )}
         </div>
       </div>
     </section>
