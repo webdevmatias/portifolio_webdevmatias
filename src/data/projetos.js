@@ -1,4 +1,4 @@
-import AmargemImage from "../assets/amargem.png";
+import AmargemImage from "../assets/amargem.webp";
 import SigparImage from "../assets/sigpar.png";
 import EcotrilhaImage from "../assets/logo-ecotrilha.svg";
 import MeetSpaceLogo from "../assets/meetspace-logo.svg";
