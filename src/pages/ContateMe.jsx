@@ -28,7 +28,7 @@ const ContateMe = () => {
       <div className="w-full max-w-4xl flex flex-col items-center gap-10">
         {/* Título */}
         <div className="text-center">
-          <h2 className="text-2xl font-ligth uppercase text-white mb-2">
+          <h2 className="text-2xl font-light uppercase text-white mb-2">
             Contate-me :
           </h2>
           <p className="text-gray-500 text-sm">
@@ -43,7 +43,7 @@ const ContateMe = () => {
               key={label}
               href={link}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="
                 group
                 flex flex-col items-center gap-3

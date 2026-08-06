@@ -6,38 +6,7 @@ import {
   HiChevronRight,
 } from "react-icons/hi2";
 
-const TIPO_CONFIG = {
-  Institucional: {
-    text: "text-blue-400",
-    bg: "bg-blue-400/10",
-    border: "border-blue-400/25",
-    glow: "rgba(96,165,250,0.12)",
-  },
-  Cultural: {
-    text: "text-purple-400",
-    bg: "bg-purple-400/10",
-    border: "border-purple-400/25",
-    glow: "rgba(167,139,250,0.12)",
-  },
-  Ambiental: {
-    text: "text-green-400",
-    bg: "bg-green-400/10",
-    border: "border-green-400/25",
-    glow: "rgba(74,222,128,0.12)",
-  },
-  Acadêmico: {
-    text: "text-yellow-400",
-    bg: "bg-yellow-400/10",
-    border: "border-yellow-400/25",
-    glow: "rgba(250,204,21,0.12)",
-  },
-  Produtividade: {
-    text: "text-cyan-400",
-    bg: "bg-cyan-400/10",
-    border: "border-cyan-400/25",
-    glow: "rgba(34,211,238,0.12)",
-  },
-};
+import { TIPO_CONFIG } from "../constants/projetos";
 
 const ProjetoDetalhe = () => {
   const { slug } = useParams();
@@ -108,6 +77,10 @@ const ProjetoDetalhe = () => {
               <img
                 src={projeto.image}
                 alt={projeto.title}
+                width={600}
+                height={180}
+                loading="eager"
+                decoding="async"
                 className="object-contain rounded-lg"
                 style={{ maxHeight: 180, maxWidth: "100%" }}
               />
@@ -137,7 +110,7 @@ const ProjetoDetalhe = () => {
                 <a
                   href={projeto.link}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 w-full bg-[#FB8500] hover:bg-[#e07800] active:scale-95 text-black font-semibold text-sm rounded-lg py-2.5 transition-all duration-200"
                 >
                   <HiArrowTopRightOnSquare size={14} />
@@ -174,7 +147,7 @@ const ProjetoDetalhe = () => {
                 <a
                   href={projeto.link}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 w-full bg-[#FB8500] hover:bg-[#e07800] active:scale-95 text-black font-semibold text-sm rounded-lg py-2.5 transition-all duration-200"
                 >
                   <HiArrowTopRightOnSquare size={14} />
@@ -240,6 +213,10 @@ const ProjetoDetalhe = () => {
                         <img
                           src={p.image}
                           alt={p.title}
+                          width={32}
+                          height={32}
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity"
                         />
                       </div>
