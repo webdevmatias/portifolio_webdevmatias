@@ -1,0 +1,24 @@
+﻿{
+  "output": {
+    "filePath": "repomix-output.xml",
+    "style": "xml",
+    "headerText": "Repomix output for portifolio_webdevmatias",
+    "removeComments": false,
+    "removeEmptyLines": false,
+    "showLineNumbers": true,
+    "topFilesFirst": true
+  },
+  "ignore": {
+    "useGitignore": true,
+    "useDefaultPatterns": true,
+    "customPatterns": [
+      "dist/**",
+      ".yarn/**",
+      "node_modules/**",
+      "*.png",
+      "*.avif",
+      "*.webp",
+      "*.svg"
+    ]
+  }
+}

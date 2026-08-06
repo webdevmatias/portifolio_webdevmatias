@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Repomix output
+repomix-output.xml
+repomix-output.md
+repomix-output.txt
+
