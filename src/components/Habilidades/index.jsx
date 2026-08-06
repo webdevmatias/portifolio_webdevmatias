@@ -1,4 +1,3 @@
-"use client";
 import { useState } from "react";
 import { CATEGORIES } from "../../data/habilidades";
 import TechChip from "./TechChip";

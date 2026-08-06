@@ -1,4 +1,3 @@
-import React from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import Button from "../components/home/Button.jsx";
 import MatiasPic from "../assets/matias-pic.avif";
@@ -31,7 +30,11 @@ const Home = () => {
         <div className="w-[220px] flex justify-center py-2">
           <img
             src={MatiasPic}
-            alt="Foto do Matias"
+            alt="Lucas Matias, Desenvolvedor Full Stack"
+            width={220}
+            height={220}
+            loading="eager"
+            decoding="async"
             className="rounded-full bg-[#01161E]"
           />
         </div>

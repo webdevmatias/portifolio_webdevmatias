@@ -1,6 +1,3 @@
-// Button.js
-import React from "react";
-
 const Button = ({ icon, label, clickable = true, color = "#FB8500", link = "#" }) => {
   const buttonContent = (
     <div 

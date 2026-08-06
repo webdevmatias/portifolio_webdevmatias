@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import SobreMim from "./SobreMim";
 import Habilidades from "./Habilidades";
 import Projetos from "./Projetos";

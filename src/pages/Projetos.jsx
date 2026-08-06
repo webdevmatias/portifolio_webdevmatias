@@ -3,13 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { PROJETOS } from "../data/projetos";
 import { HiArrowUpRight, HiChevronDown } from "react-icons/hi2";
 
-const TIPO_COLORS = {
-  Institucional: "text-blue-400 bg-blue-400/10 border-blue-400/20",
-  Cultural: "text-purple-400 bg-purple-400/10 border-purple-400/20",
-  Ambiental: "text-green-400 bg-green-400/10 border-green-400/20",
-  Acadêmico: "text-yellow-400 bg-yellow-400/10 border-yellow-400/20",
-  Produtividade: "text-cyan-400 bg-cyan-400/10 border-cyan-400/20",
-};
+import { TIPO_CONFIG } from "../constants/projetos";
 
 const LIMIT = 5;
 const INITIAL = 3;
@@ -50,6 +44,10 @@ const Projetos = () => {
                   <img
                     src={projeto.image}
                     alt={projeto.title}
+                    width={352}
+                    height={176}
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full rounded object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-200"
                   />
                 </div>
@@ -60,7 +58,7 @@ const Projetos = () => {
                       {projeto.title}
                     </h3>
                     <span
-                      className={`text-xs px-2 py-0.5 rounded-full border shrink-0 ${TIPO_COLORS[projeto.tipo]}`}
+                      className={`text-xs px-2 py-0.5 rounded-full border shrink-0 ${TIPO_CONFIG[projeto.tipo]?.badge}`}
                     >
                       {projeto.tipo}
                     </span>
