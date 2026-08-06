@@ -20,7 +20,11 @@ const SobreMim = () => (
           <div className="w-44 h-44 md:w-52 md:h-52 rounded-full ring-2 ring-[#FB8500]/40 ring-offset-2 ring-offset-[#080808] overflow-hidden">
             <img
               src={MatiasPic}
-              alt="Lucas Mattias"
+              alt="Lucas Matias, Desenvolvedor Full Stack"
+              width={208}
+              height={208}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover"
             />
           </div>
@@ -30,9 +34,9 @@ const SobreMim = () => (
         <div className="flex flex-col gap-5 flex-1 text-center md:text-left">
           <div className="flex flex-col gap-1.5">
             <h3 className="text-white space-y-2 font-semibold text-base">
-              <p className="pb-1 text-lg"> Lucas Matias</p>
-              <span className="text-xs text-[#FB8500]/50 uppercase">
-                <p>{"< Full Stack Developer />"}</p>{" "}
+              <span className="block pb-1 text-lg">Lucas Matias</span>
+              <span className="block text-xs text-[#FB8500]/50 uppercase">
+                {"<Full Stack Developer />"}
               </span>
             </h3>
             <p className="text-sm text-gray-400 leading-relaxed">
