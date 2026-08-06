@@ -104,8 +104,19 @@ const Particles = ({
     const container = containerRef.current;
     if (!container) return;
 
-    const renderer = new Renderer({ depth: false, alpha: true });
-    const gl = renderer.gl;
+    // 1) Respeitar prefers-reduced-motion — não inicializar animação
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    // 2) Fallback gracioso se WebGL não estiver disponível
+    let renderer, gl;
+    try {
+      renderer = new Renderer({ depth: false, alpha: true });
+      gl = renderer.gl;
+    } catch {
+      console.warn('[Particles] WebGL não suportado neste dispositivo.');
+      return;
+    }
+
     container.appendChild(gl.canvas);
     gl.clearColor(0, 0, 0, 0);
 
@@ -198,7 +209,8 @@ const Particles = ({
       if (!disableRotation) {
         particles.rotation.x = Math.sin(elapsed * 0.0002) * 0.1;
         particles.rotation.y = Math.cos(elapsed * 0.0005) * 0.15;
-        particles.rotation.z += 0.01 * speed;
+        // 5) Módulo evita acumulação infinita de ponto flutuante
+        particles.rotation.z = (particles.rotation.z + 0.01 * speed) % (Math.PI * 2);
       }
 
       renderer.render({ scene: particles, camera });
@@ -206,12 +218,27 @@ const Particles = ({
 
     animationFrameId = requestAnimationFrame(update);
 
+    // 3) Page Visibility API — pausa quando aba vai ao background
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        cancelAnimationFrame(animationFrameId);
+      } else {
+        lastTime = performance.now();
+        animationFrameId = requestAnimationFrame(update);
+      }
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
     return () => {
+      // 4) Limpar todos os event listeners
       window.removeEventListener('resize', resize);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       if (moveParticlesOnHover) {
         container.removeEventListener('mousemove', handleMouseMove);
       }
       cancelAnimationFrame(animationFrameId);
+      // 4) Destruir contexto WebGL explicitamente — evita memory leak
+      gl.getExtension('WEBGL_lose_context')?.loseContext();
       if (container.contains(gl.canvas)) {
         container.removeChild(gl.canvas);
       }
