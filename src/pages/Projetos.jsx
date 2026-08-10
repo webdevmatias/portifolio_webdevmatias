@@ -3,6 +3,8 @@ import { PROJETOS } from "../data/projetos";
 import { HiChevronDown } from "react-icons/hi2";
 import ProjectCard from "../components/projetos/ProjectCard";
 import ProjectFilters from "../components/projetos/ProjectFilters";
+import { useLanguage } from "../context/LanguageContext";
+import { TIPO_CONFIG } from "../constants/projetos";
 
 const INITIAL = 3;
 const STEP = 3;
@@ -10,6 +12,7 @@ const STEP = 3;
 const Projetos = () => {
   const [activeFilter, setActiveFilter] = useState(null);
   const [visible, setVisible] = useState(INITIAL);
+  const { language, t } = useLanguage();
 
   // Count per tipo + total
   const counts = useMemo(() => {
@@ -37,18 +40,21 @@ const Projetos = () => {
     setVisible(INITIAL);
   };
 
+  const activeFilterLabel = activeFilter
+    ? (language === "en" ? (TIPO_CONFIG[activeFilter]?.label_en || activeFilter) : activeFilter)
+    : "";
 
   return (
-    <section className="flex justify-center bg-[#0e0e0e] w-full min-h-screen py-28 px-4">
+    <section id="projetos" className="flex justify-center bg-[#0e0e0e] w-full min-h-screen py-28 px-4">
       <div className="w-full max-w-5xl flex flex-col gap-10">
 
         {/* Header */}
         <div className="text-center flex flex-col gap-2">
           <h2 className="text-2xl text-white uppercase font-light">
-            Projetos :
+            {t("projetos.title")}
           </h2>
           <p className="text-gray-500 text-sm">
-            Clique em um projeto para ver os detalhes
+            {t("projetos.subtitle")}
           </p>
         </div>
 
@@ -75,8 +81,8 @@ const Projetos = () => {
         {/* Load more / collapse */}
         <div className="flex flex-col items-center gap-2">
           <span className="text-xs text-gray-600 ibm-plex-mono-regular">
-            {shown.length} de {filtered.length}
-            {activeFilter ? ` em "${activeFilter}"` : ""}
+            {t("projetos.showingLabel")} {shown.length} {t("projetos.ofLabel")} {filtered.length}
+            {activeFilter ? ` ${t("projetos.inLabel")} "${activeFilterLabel}"` : ""}
           </span>
 
           {hasMore ? (
@@ -85,7 +91,7 @@ const Projetos = () => {
               className="flex items-center gap-2 border border-white/10 hover:border-[#FB8500]/40 text-gray-400 hover:text-white text-sm px-6 py-2.5 rounded-xl transition-all duration-200 bg-white/[0.02] hover:bg-white/[0.04]"
             >
               <HiChevronDown size={15} />
-              Ver mais
+              {t("projetos.verMais")}
             </button>
           ) : filtered.length > INITIAL ? (
             <button
@@ -93,7 +99,7 @@ const Projetos = () => {
               className="flex items-center gap-2 border border-white/10 hover:border-white/20 text-gray-600 hover:text-gray-400 text-sm px-6 py-2.5 rounded-xl transition-all duration-200 bg-white/[0.02]"
             >
               <HiChevronDown size={15} className="rotate-180" />
-              Ocultar
+              {t("projetos.ocultar")}
             </button>
           ) : null}
         </div>

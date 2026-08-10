@@ -1,5 +1,6 @@
 export const TIPO_CONFIG = {
   Institucional: {
+    label_en: "Institutional",
     color: "#60A5FA",
     text: "text-blue-400",
     bg: "bg-blue-400/10",
@@ -8,6 +9,7 @@ export const TIPO_CONFIG = {
     glow: "rgba(96,165,250,0.12)",
   },
   Cultural: {
+    label_en: "Cultural",
     color: "#A78BFA",
     text: "text-purple-400",
     bg: "bg-purple-400/10",
@@ -16,6 +18,7 @@ export const TIPO_CONFIG = {
     glow: "rgba(167,139,250,0.12)",
   },
   Ambiental: {
+    label_en: "Environmental",
     color: "#4ADE80",
     text: "text-green-400",
     bg: "bg-green-400/10",
@@ -24,6 +27,7 @@ export const TIPO_CONFIG = {
     glow: "rgba(74,222,128,0.12)",
   },
   Acadêmico: {
+    label_en: "Academic",
     color: "#FACC15",
     text: "text-yellow-400",
     bg: "bg-yellow-400/10",
@@ -32,6 +36,7 @@ export const TIPO_CONFIG = {
     glow: "rgba(250,204,21,0.12)",
   },
   Produtividade: {
+    label_en: "Productivity",
     color: "#22D3EE",
     text: "text-cyan-400",
     bg: "bg-cyan-400/10",

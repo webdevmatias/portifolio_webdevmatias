@@ -1,4 +1,5 @@
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
+import { useLanguage } from "../context/LanguageContext";
 
 const github = "https://github.com/webdevmatias";
 const linkedin = "https://www.linkedin.com/in/matiaz/";
@@ -23,16 +24,18 @@ const CONTACTS = [
 ];
 
 const ContateMe = () => {
+  const { t } = useLanguage();
+
   return (
-    <section className="flex justify-center items-center bg-[#080808] w-full min-h-screen py-16 px-6">
+    <section id="contate-me" className="flex justify-center items-center bg-[#080808] w-full min-h-screen py-16 px-6">
       <div className="w-full max-w-4xl flex flex-col items-center gap-10">
         {/* Título */}
         <div className="text-center">
           <h2 className="text-2xl font-light uppercase text-white mb-2">
-            Contate-me :
+            {t("contato.title")}
           </h2>
           <p className="text-gray-500 text-sm">
-            Aberto a projetos, parcerias e oportunidades
+            {t("contato.subtitle")}
           </p>
         </div>
 

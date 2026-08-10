@@ -1,14 +1,20 @@
 import { useNavigate } from "react-router-dom";
 import { HiArrowUpRight, HiCpuChip } from "react-icons/hi2";
 import { TIPO_CONFIG } from "../../constants/projetos";
+import { useLanguage } from "../../context/LanguageContext";
 
 const TECH_VISIBLE = 4;
 
 const ProjectCard = ({ projeto, index = 0 }) => {
   const navigate = useNavigate();
+  const { language } = useLanguage();
   const tipo = TIPO_CONFIG[projeto.tipo] || {};
   const visibleTechs = projeto.tecnologias.slice(0, TECH_VISIBLE);
   const remaining = projeto.tecnologias.length - TECH_VISIBLE;
+
+  const tipoLabel = language === "en" ? (projeto.tipo_en || projeto.tipo) : projeto.tipo;
+  const summaryText = language === "en" ? (projeto.summary_en || projeto.summary) : projeto.summary;
+  const archText = language === "en" ? (projeto.arch_en || projeto.arch) : projeto.arch;
 
   return (
     <article
@@ -34,12 +40,12 @@ const ProjectCard = ({ projeto, index = 0 }) => {
             {projeto.title}
           </h3>
           <span className={`text-[10px] px-2 py-0.5 rounded-full border shrink-0 mt-0.5 font-medium ${tipo.badge}`}>
-            {projeto.tipo}
+            {tipoLabel}
           </span>
         </div>
 
         <p className="text-xs text-gray-500 leading-relaxed line-clamp-3 flex-1">
-          {projeto.summary}
+          {summaryText}
         </p>
 
         <div className="flex flex-wrap items-center gap-1.5 pt-3 border-t border-white/5">
@@ -60,11 +66,11 @@ const ProjectCard = ({ projeto, index = 0 }) => {
       </div>
 
       {/* Arch footer */}
-      {projeto.arch && (
+      {archText && (
         <div className="px-5 py-3 border-t border-white/5 flex items-center gap-2 bg-white/[0.015]">
           <HiCpuChip size={11} className="text-[#FB8500]/50 shrink-0" />
           <span className="text-[10px] text-gray-600 ibm-plex-mono-regular truncate flex-1">
-            {projeto.arch}
+            {archText}
           </span>
           <HiArrowUpRight
             size={12}

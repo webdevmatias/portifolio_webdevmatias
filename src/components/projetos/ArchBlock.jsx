@@ -1,6 +1,9 @@
 import { HiCpuChip, HiCheckCircle } from "react-icons/hi2";
+import { useLanguage } from "../../context/LanguageContext";
 
 const ArchBlock = ({ arch, archDetails }) => {
+  const { t } = useLanguage();
+
   if (!arch && (!archDetails || archDetails.length === 0)) return null;
 
   return (
@@ -9,7 +12,7 @@ const ArchBlock = ({ arch, archDetails }) => {
       <div className="flex items-center gap-2.5 px-5 py-3 border-b border-[#FB8500]/15 bg-[#FB8500]/[0.04]">
         <HiCpuChip size={14} className="text-[#FB8500] shrink-0" />
         <span className="text-[10px] uppercase tracking-widest text-[#FB8500]/70 ibm-plex-mono-regular font-semibold">
-          Decisões Arquiteturais
+          {t("projetoDetalhes.archTitle")}
         </span>
       </div>
 

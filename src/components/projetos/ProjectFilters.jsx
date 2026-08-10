@@ -1,6 +1,8 @@
 import { TIPO_CONFIG } from "../../constants/projetos";
+import { useLanguage } from "../../context/LanguageContext";
 
 const ProjectFilters = ({ active, onChange, counts }) => {
+  const { language, t } = useLanguage();
   const tipos = Object.keys(TIPO_CONFIG).filter((tipo) => (counts[tipo] ?? 0) > 0);
 
   return (
@@ -13,7 +15,7 @@ const ProjectFilters = ({ active, onChange, counts }) => {
             : "bg-transparent text-gray-400 border-white/10 hover:border-white/25 hover:text-white"
         }`}
       >
-        Todos
+        {t("projetos.allFilter")}
         <span className="ml-1.5 opacity-60">
           ({counts.__total__ ?? 0})
         </span>
@@ -23,6 +25,7 @@ const ProjectFilters = ({ active, onChange, counts }) => {
         const cfg = TIPO_CONFIG[tipo];
         const isActive = active === tipo;
         const count = counts[tipo] ?? 0;
+        const label = language === "en" ? (cfg.label_en || tipo) : tipo;
 
         return (
           <button
@@ -39,7 +42,7 @@ const ProjectFilters = ({ active, onChange, counts }) => {
                 : {}
             }
           >
-            {tipo}
+            {label}
             <span className="ml-1.5 opacity-60">({count})</span>
           </button>
         );

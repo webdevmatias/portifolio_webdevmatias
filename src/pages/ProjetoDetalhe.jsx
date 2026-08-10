@@ -9,10 +9,12 @@ import {
 import { TIPO_CONFIG } from "../constants/projetos";
 import ArchBlock from "../components/projetos/ArchBlock";
 import TechStack from "../components/projetos/TechStack";
+import { useLanguage } from "../context/LanguageContext";
 
 const ProjetoDetalhe = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
+  const { language, t } = useLanguage();
 
   const projeto = PROJETOS.find((p) => p.slug === slug);
   const tipo = TIPO_CONFIG[projeto?.tipo] || {};
@@ -22,17 +24,26 @@ const ProjetoDetalhe = () => {
     return (
       <section className="flex justify-center items-center bg-[#080808] min-h-screen px-4">
         <div className="text-center flex flex-col gap-3">
-          <p className="text-gray-500 text-sm">Projeto não encontrado.</p>
+          <p className="text-gray-500 text-sm">{t("projetoDetalhes.notFound")}</p>
           <button
             onClick={() => navigate("/projetos")}
             className="text-[#FB8500] text-sm underline"
           >
-            Voltar para projetos
+            {t("projetoDetalhes.backToProjects")}
           </button>
         </div>
       </section>
     );
   }
+
+  const tipoLabel = language === "en" ? (projeto.tipo_en || projeto.tipo) : projeto.tipo;
+  const descriptionText = language === "en" ? (projeto.description_en || projeto.description) : projeto.description;
+  const archText = language === "en" ? (projeto.arch_en || projeto.arch) : projeto.arch;
+  const archDetailsList = language === "en" ? (projeto.archDetails_en || projeto.archDetails) : projeto.archDetails;
+
+  const btnText = projeto.link?.includes("github.com")
+    ? t("projetoDetalhes.viewGitHub")
+    : t("projetoDetalhes.viewApp");
 
   return (
     <section className="flex justify-center bg-[#080808] w-full min-h-screen px-4 py-28">
@@ -45,7 +56,7 @@ const ProjetoDetalhe = () => {
             className="hover:text-gray-400 transition-colors flex items-center gap-1.5 ibm-plex-mono-regular"
           >
             <HiArrowLeft size={11} />
-            Projetos
+            {t("projetoDetalhes.breadcrumbProjects")}
           </button>
           <span className="text-gray-700">/</span>
           <span className="text-gray-400 truncate max-w-[200px] ibm-plex-mono-regular">
@@ -68,7 +79,7 @@ const ProjetoDetalhe = () => {
                 <span
                   className={`text-xs px-2.5 py-1 rounded-full border font-medium mt-1 shrink-0 ${tipo.badge}`}
                 >
-                  {projeto.tipo}
+                  {tipoLabel}
                 </span>
               </div>
               <div
@@ -102,11 +113,11 @@ const ProjetoDetalhe = () => {
 
             {/* Descrição */}
             <p className="text-sm text-gray-400 leading-relaxed">
-              {projeto.description}
+              {descriptionText}
             </p>
 
             {/* ★ Bloco Arquitetural */}
-            <ArchBlock arch={projeto.arch} archDetails={projeto.archDetails} />
+            <ArchBlock arch={archText} archDetails={archDetailsList} />
 
             {/* Stack por camada */}
             <TechStack tecnologias={projeto.tecnologias} />
@@ -121,25 +132,25 @@ const ProjetoDetalhe = () => {
                   className="flex items-center justify-center gap-2 w-full bg-[#FB8500] hover:bg-[#e07800] active:scale-95 text-black font-semibold text-sm rounded-xl py-3 transition-all duration-200"
                 >
                   <HiArrowTopRightOnSquare size={15} />
-                  {projeto.link.includes("github.com") ? "Ver no GitHub" : "Acessar Aplicação"}
+                  {btnText}
                 </a>
               ) : (
                 <div className="flex items-center justify-center w-full bg-white/5 border border-white/5 text-gray-600 text-sm rounded-xl py-3 cursor-not-allowed select-none">
-                  Repositório privado
+                  {t("projetoDetalhes.privateRepo")}
                 </div>
               )}
 
               <div className="flex items-center justify-between rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3">
                 <span className={`text-xs font-medium ibm-plex-mono-regular ${tipo.text}`}>
-                  {projeto.tipo}
+                  {tipoLabel}
                 </span>
                 <div className="w-px h-3 bg-white/10" />
                 <span className="text-xs text-gray-500 ibm-plex-mono-regular">
-                  {projeto.tecnologias?.length || 0} tecnologias
+                  {projeto.tecnologias?.length || 0} {t("projetoDetalhes.techCount")}
                 </span>
                 <div className="w-px h-3 bg-white/10" />
                 <span className="text-xs text-gray-500 ibm-plex-mono-regular">
-                  {projeto.isClickable ? "Público" : "Privado"}
+                  {projeto.isClickable ? t("projetoDetalhes.accessPublic") : t("projetoDetalhes.accessPrivate")}
                 </span>
               </div>
             </div>
@@ -158,11 +169,11 @@ const ProjetoDetalhe = () => {
                   className="flex items-center justify-center gap-2 w-full bg-[#FB8500] hover:bg-[#e07800] active:scale-95 text-black font-semibold text-sm rounded-lg py-2.5 transition-all duration-200"
                 >
                   <HiArrowTopRightOnSquare size={14} />
-                  {projeto.link.includes("github.com") ? "Ver no GitHub" : "Acessar Aplicação"}
+                  {btnText}
                 </a>
               ) : (
                 <div className="flex items-center justify-center w-full bg-white/5 border border-white/5 text-gray-600 text-sm rounded-lg py-2.5 cursor-not-allowed select-none">
-                  Repositório privado
+                  {t("projetoDetalhes.privateRepo")}
                 </div>
               )}
 
@@ -171,22 +182,22 @@ const ProjetoDetalhe = () => {
                 className="flex items-center justify-center gap-1.5 w-full text-gray-500 hover:text-gray-300 text-xs py-1.5 transition-colors ibm-plex-mono-regular"
               >
                 <HiArrowLeft size={11} />
-                Todos os projetos
+                {t("projetoDetalhes.allProjectsBtn")}
               </button>
             </div>
 
             {/* Info */}
             <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4 flex flex-col gap-3">
               {[
-                { label: "Categoria", value: projeto.tipo, cls: tipo.text },
+                { label: t("projetoDetalhes.sidebarCategory"), value: tipoLabel, cls: tipo.text },
                 {
-                  label: "Stack",
-                  value: `${projeto.tecnologias?.length || 0} tecnologias`,
+                  label: t("projetoDetalhes.sidebarStack"),
+                  value: `${projeto.tecnologias?.length || 0} ${t("projetoDetalhes.techCount")}`,
                   cls: "text-gray-400",
                 },
                 {
-                  label: "Acesso",
-                  value: projeto.isClickable ? "Público" : "Privado",
+                  label: t("projetoDetalhes.sidebarAccess"),
+                  value: projeto.isClickable ? t("projetoDetalhes.accessPublic") : t("projetoDetalhes.accessPrivate"),
                   cls: projeto.isClickable ? "text-green-400" : "text-gray-500",
                 },
               ].map(({ label, value, cls }, i, arr) => (
@@ -207,13 +218,13 @@ const ProjetoDetalhe = () => {
             </div>
 
             {/* Arch resumo (sidebar) */}
-            {projeto.arch && (
+            {archText && (
               <div className="rounded-xl border border-[#FB8500]/15 bg-[#FB8500]/[0.03] p-4">
                 <p className="text-[10px] uppercase tracking-widest text-[#FB8500]/50 ibm-plex-mono-regular mb-2">
-                  Arquitetura
+                  {t("projetoDetalhes.sidebarArch")}
                 </p>
                 <p className="text-xs text-white/70 ibm-plex-mono-regular leading-relaxed">
-                  {projeto.arch}
+                  {archText}
                 </p>
               </div>
             )}
@@ -222,10 +233,11 @@ const ProjetoDetalhe = () => {
             {suggestions.length > 0 && (
               <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4 flex flex-col gap-1">
                 <span className="text-[10px] uppercase tracking-widest text-gray-600 mb-2 ibm-plex-mono-regular">
-                  Outros projetos
+                  {t("projetoDetalhes.otherProjects")}
                 </span>
                 {suggestions.map((p) => {
-                  const t = TIPO_CONFIG[p.tipo] || {};
+                  const tType = TIPO_CONFIG[p.tipo] || {};
+                  const pTipoLabel = language === "en" ? (p.tipo_en || p.tipo) : p.tipo;
                   return (
                     <button
                       key={p.slug}
@@ -247,8 +259,8 @@ const ProjetoDetalhe = () => {
                         <span className="text-xs text-white font-medium truncate">
                           {p.title}
                         </span>
-                        <span className={`text-[10px] ibm-plex-mono-regular ${t.text}`}>
-                          {p.tipo}
+                        <span className={`text-[10px] ibm-plex-mono-regular ${tType.text}`}>
+                          {pTipoLabel}
                         </span>
                       </div>
                       <HiChevronRight

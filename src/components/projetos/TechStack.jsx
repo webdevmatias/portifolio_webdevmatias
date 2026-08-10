@@ -1,17 +1,19 @@
 import { useState } from "react";
 import TechChip from "../Habilidades/TechChip";
+import { useLanguage } from "../../context/LanguageContext";
 
 const LAYER_CONFIG = {
-  front: { label: "Front-end", color: "#61DAFB" },
-  back: { label: "Back-end", color: "#68D391" },
-  db: { label: "Banco de Dados", color: "#F6AD55" },
-  devops: { label: "DevOps", color: "#76E4F7" },
+  front: { label: "Front-end", label_en: "Front-end", color: "#61DAFB" },
+  back: { label: "Back-end", label_en: "Back-end", color: "#68D391" },
+  db: { label: "Banco de Dados", label_en: "Database", color: "#F6AD55" },
+  devops: { label: "DevOps", label_en: "DevOps", color: "#76E4F7" },
 };
 
 const LAYER_ORDER = ["front", "back", "db", "devops"];
 
 const TechStack = ({ tecnologias }) => {
   const [active, setActive] = useState(null);
+  const { language, t } = useLanguage();
 
   if (!tecnologias || tecnologias.length === 0) return null;
 
@@ -30,19 +32,20 @@ const TechStack = ({ tecnologias }) => {
   return (
     <div className="flex flex-col gap-3">
       <p className="text-xs uppercase tracking-widest text-gray-600 ibm-plex-mono-regular">
-        Stack de Tecnologias
+        {t("projetoDetalhes.stackTitle")}
       </p>
 
       {activeLayers.map((layer) => {
         const cfg = LAYER_CONFIG[layer];
         const techs = byLayer[layer];
+        const layerLabel = language === "en" ? cfg.label_en : cfg.label;
 
         return (
           <div
             key={layer}
             className="bg-white/[0.03] border border-white/5 rounded-2xl p-5 transition-all duration-300"
           >
-            {/* Category header — idêntico ao Habilidades */}
+            {/* Category header */}
             <div className="flex items-center gap-3 mb-4">
               <span
                 className="w-1.5 h-1.5 rounded-full shrink-0"
@@ -52,13 +55,13 @@ const TechStack = ({ tecnologias }) => {
                 className="text-xs font-semibold uppercase tracking-widest"
                 style={{ color: cfg.color }}
               >
-                {cfg.label}
+                {layerLabel}
               </span>
               <div className="flex-1 h-px bg-white/5" />
               <span className="text-xs text-gray-600">{techs.length}</span>
             </div>
 
-            {/* Chips — reutiliza TechChip exatamente como Habilidades */}
+            {/* Chips */}
             <div className="flex flex-wrap justify-center md:justify-start gap-2">
               {techs.map(({ Icon, label: name }) => {
                 const key = `${layer}-${name}`;
