@@ -11,7 +11,7 @@ function Layout() {
       <Home></Home>
       <SobreMim></SobreMim>
       <Habilidades></Habilidades>
-      <Projetos></Projetos>
+      <Projetos />
       <ContateMe></ContateMe>
     </>
   );

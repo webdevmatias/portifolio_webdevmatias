@@ -1,6 +1,6 @@
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import Button from "../components/home/Button.jsx";
-import MatiasPic from "../assets/matias-pic.avif";
+import MatiasPic from "../assets/mattias-pic.webp";
 import Particles from "../components/home/Particles";
 
 const Home = () => {

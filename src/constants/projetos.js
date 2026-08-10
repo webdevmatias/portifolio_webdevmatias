@@ -1,5 +1,6 @@
-﻿export const TIPO_CONFIG = {
+export const TIPO_CONFIG = {
   Institucional: {
+    color: "#60A5FA",
     text: "text-blue-400",
     bg: "bg-blue-400/10",
     border: "border-blue-400/25",
@@ -7,6 +8,7 @@
     glow: "rgba(96,165,250,0.12)",
   },
   Cultural: {
+    color: "#A78BFA",
     text: "text-purple-400",
     bg: "bg-purple-400/10",
     border: "border-purple-400/25",
@@ -14,6 +16,7 @@
     glow: "rgba(167,139,250,0.12)",
   },
   Ambiental: {
+    color: "#4ADE80",
     text: "text-green-400",
     bg: "bg-green-400/10",
     border: "border-green-400/25",
@@ -21,6 +24,7 @@
     glow: "rgba(74,222,128,0.12)",
   },
   Acadêmico: {
+    color: "#FACC15",
     text: "text-yellow-400",
     bg: "bg-yellow-400/10",
     border: "border-yellow-400/25",
@@ -28,6 +32,7 @@
     glow: "rgba(250,204,21,0.12)",
   },
   Produtividade: {
+    color: "#22D3EE",
     text: "text-cyan-400",
     bg: "bg-cyan-400/10",
     border: "border-cyan-400/25",

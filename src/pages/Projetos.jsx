@@ -1,26 +1,50 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useMemo } from "react";
 import { PROJETOS } from "../data/projetos";
-import { HiArrowUpRight, HiChevronDown } from "react-icons/hi2";
+import { HiChevronDown } from "react-icons/hi2";
+import ProjectCard from "../components/projetos/ProjectCard";
+import ProjectFilters from "../components/projetos/ProjectFilters";
 
-import { TIPO_CONFIG } from "../constants/projetos";
-
-const LIMIT = 5;
 const INITIAL = 3;
 const STEP = 3;
 
 const Projetos = () => {
-  const navigate = useNavigate();
+  const [activeFilter, setActiveFilter] = useState(null);
   const [visible, setVisible] = useState(INITIAL);
 
-  const shown = PROJETOS.slice(0, visible);
-  const hasMore = visible < PROJETOS.length;
+  // Count per tipo + total
+  const counts = useMemo(() => {
+    const c = { __total__: PROJETOS.length };
+    for (const p of PROJETOS) {
+      c[p.tipo] = (c[p.tipo] || 0) + 1;
+    }
+    return c;
+  }, []);
+
+  // Filtered list
+  const filtered = useMemo(
+    () =>
+      activeFilter
+        ? PROJETOS.filter((p) => p.tipo === activeFilter)
+        : PROJETOS,
+    [activeFilter]
+  );
+
+  const shown = filtered.slice(0, visible);
+  const hasMore = visible < filtered.length;
+
+  const handleFilter = (tipo) => {
+    setActiveFilter(tipo);
+    setVisible(INITIAL);
+  };
+
 
   return (
-    <section className="flex justify-center bg-[#0e0e0e] w-full min-h-screen py-24 px-4">
+    <section className="flex justify-center bg-[#0e0e0e] w-full min-h-screen py-28 px-4">
       <div className="w-full max-w-5xl flex flex-col gap-10">
-        <div className="text-center">
-          <h2 className="text-2xl font-light uppercase text-white mb-2">
+
+        {/* Header */}
+        <div className="text-center flex flex-col gap-2">
+          <h2 className="text-2xl text-white uppercase font-light">
             Projetos :
           </h2>
           <p className="text-gray-500 text-sm">
@@ -28,98 +52,50 @@ const Projetos = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {shown.map((projeto) => {
-            const techs = projeto.tecnologias;
-            const visibleTechs = techs.slice(0, LIMIT);
-            const remaining = techs.length - LIMIT;
+        {/* Filters */}
+        <ProjectFilters
+          active={activeFilter}
+          onChange={handleFilter}
+          counts={counts}
+        />
 
-            return (
-              <div
-                key={projeto.slug}
-                onClick={() => navigate(`/projetos/${projeto.slug}`)}
-                className="group cursor-pointer flex flex-col bg-white/[0.03] border border-white/5 rounded-2xl overflow-hidden hover:border-[#FB8500]/40 transition-all duration-200 h-full"
-              >
-                <div className="h-44 w-full bg-white/[0.02] border-b border-white/5 flex items-center justify-center p-3 shrink-0">
-                  <img
-                    src={projeto.image}
-                    alt={projeto.title}
-                    width={352}
-                    height={176}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-full w-full rounded object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-200"
-                  />
-                </div>
-
-                <div className="flex flex-col gap-3 p-5 flex-1">
-                  <div className="flex items-center justify-between gap-2">
-                    <h3 className="text-white font-semibold text-base truncate">
-                      {projeto.title}
-                    </h3>
-                    <span
-                      className={`text-xs px-2 py-0.5 rounded-full border shrink-0 ${TIPO_CONFIG[projeto.tipo]?.badge}`}
-                    >
-                      {projeto.tipo}
-                    </span>
-                  </div>
-
-                  <p className="text-xs text-gray-500 leading-relaxed line-clamp-3 flex-1">
-                    {projeto.summary}
-                  </p>
-
-                  <div className="flex flex-wrap items-center gap-2 pt-3 border-t border-white/5">
-                    {visibleTechs.map(({ label, Icon }) => (
-                      <span
-                        key={label}
-                        title={label}
-                        className="text-[#FB8500]"
-                      >
-                        <Icon size={16} />
-                      </span>
-                    ))}
-                    {remaining > 0 && (
-                      <span className="text-xs text-gray-600">
-                        +{remaining}
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                <div className="px-5 py-3 border-t border-white/5 flex items-center justify-between shrink-0">
-                  <span className="text-xs text-gray-600">Ver detalhes</span>
-                  <HiArrowUpRight
-                    size={14}
-                    className="text-gray-700 group-hover:text-[#FB8500] transition-colors duration-200"
-                  />
-                </div>
-              </div>
-            );
-          })}
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          {shown.map((projeto, i) => (
+            <div
+              key={projeto.slug}
+              className="opacity-0 animate-fade-in"
+              style={{ animationDelay: `${i * 80}ms`, animationFillMode: "forwards" }}
+            >
+              <ProjectCard projeto={projeto} index={i} />
+            </div>
+          ))}
         </div>
 
-        {/* Ver mais / Ocultar */}
+        {/* Load more / collapse */}
         <div className="flex flex-col items-center gap-2">
-          <span className="text-xs text-gray-600">
-            Exibindo {shown.length} de {PROJETOS.length}
+          <span className="text-xs text-gray-600 ibm-plex-mono-regular">
+            {shown.length} de {filtered.length}
+            {activeFilter ? ` em "${activeFilter}"` : ""}
           </span>
+
           {hasMore ? (
             <button
               onClick={() => setVisible((v) => v + STEP)}
-              className="flex items-center gap-2 border border-white/10 hover:border-[#FB8500]/40 text-gray-400 hover:text-white text-sm px-5 py-2.5 rounded-xl transition-all duration-200 bg-white/[0.02] hover:bg-white/[0.04]"
+              className="flex items-center gap-2 border border-white/10 hover:border-[#FB8500]/40 text-gray-400 hover:text-white text-sm px-6 py-2.5 rounded-xl transition-all duration-200 bg-white/[0.02] hover:bg-white/[0.04]"
             >
               <HiChevronDown size={15} />
-              Ver mais projetos
+              Ver mais
             </button>
-          ) : (
+          ) : filtered.length > INITIAL ? (
             <button
               onClick={() => setVisible(INITIAL)}
-              className="flex items-center gap-2 border border-white/10 hover:border-white/20 text-gray-600 hover:text-gray-400 text-sm px-5 py-2.5 rounded-xl transition-all duration-200 bg-white/[0.02]"
+              className="flex items-center gap-2 border border-white/10 hover:border-white/20 text-gray-600 hover:text-gray-400 text-sm px-6 py-2.5 rounded-xl transition-all duration-200 bg-white/[0.02]"
             >
               <HiChevronDown size={15} className="rotate-180" />
               Ocultar
             </button>
-          )}
+          ) : null}
         </div>
       </div>
     </section>

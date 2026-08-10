@@ -1,4 +1,4 @@
-import MatiasPic from "../assets/matias-pic.avif";
+import MatiasPic from "../assets/mattias-pic.webp";
 import { HiArrowUpRight } from "react-icons/hi2";
 
 const INTERESTS = [
