@@ -24,34 +24,32 @@ const TechChip = ({ Icon, label, note, isActive, onClick }) => {
       <button
         onPointerDown={handlePointer}
         onClick={(e) => e.preventDefault()}
-        className={`flex items-center gap-2 px-3 py-2 rounded-xl border text-sm font-medium transition-all duration-200 select-none touch-manipulation
-          ${
-            isActive
-              ? "bg-[#FB8500]/15 border-[#FB8500]/60 text-[#FB8500]"
-              : "bg-[#1a1a1a] border-white/5 text-gray-400 hover:border-white/20 hover:text-gray-200"
-          }`}
+        className={`group flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border text-xs font-medium transition-all duration-200 select-none touch-manipulation cursor-pointer ${
+          isActive
+            ? "bg-[#FB8500]/15 border-[#FB8500]/60 text-[#FB8500] shadow-[0_0_12px_rgba(251,133,0,0.15)]"
+            : "bg-[#141414] border-white/5 text-gray-300 hover:border-[#FB8500]/40 hover:text-white hover:bg-white/[0.04]"
+        }`}
       >
-        <Icon size={16} />
-        <span>{label}</span>
+        <Icon size={16} className={`shrink-0 transition-transform duration-200 group-hover:scale-110 ${isActive ? "text-[#FB8500]" : "text-[#FB8500]/80"}`} />
+        <span className="tracking-wide ibm-plex-mono-regular">{label}</span>
 
-        {/* note inline — só no desktop */}
+        {/* Note inline — exibido quando ativo */}
         {isActive && note && (
-          <span className="hidden md:inline ml-1 text-xs text-gray-400 font-normal border-l border-white/10 pl-2">
+          <span className="hidden md:inline ml-1 text-[11px] text-gray-400 font-normal border-l border-white/15 pl-2 truncate max-w-[200px]">
             {note}
           </span>
         )}
       </button>
 
-      {/* Tooltip flutuante — só no mobile */}
+      {/* Tooltip flutuante — mobile */}
       {isActive && note && (
-        <div className="md:hidden absolute bottom-full left-1/2 -translate-x-1/2 mb-2.5 z-50 pointer-events-none">
-          <div className="bg-[#FB8500] border border-[#FB8500]/25 text-gray-900 text-xs px-3 py-1.5 rounded-lg whitespace-nowrap shadow-lg shadow-black/50">
+        <div className="md:hidden absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50 pointer-events-none">
+          <div className="bg-[#FB8500] text-black font-semibold text-[11px] px-2.5 py-1 rounded-md whitespace-nowrap shadow-lg">
             {note}
           </div>
-          {/* Seta */}
-          <div className="flex justify-center -mt-[5px]">
+          <div className="flex justify-center -mt-[4px]">
             <div
-              className="w-2.5 h-2.5 rotate-45 border-b border-r border-[#FB8500]/25"
+              className="w-2 h-2 rotate-45"
               style={{ background: "#FB8500" }}
             />
           </div>

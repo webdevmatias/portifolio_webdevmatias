@@ -5,7 +5,7 @@ import LetsNoteLogo from "../assets/lets-note.avif";
 import AtomImage from "../assets/atom.webp";
 import LogbookImage from "../assets/logbook.webp";
 
-import { FaReact, FaDocker, FaCode, FaDatabase } from "react-icons/fa";
+import { FaReact, FaDocker, FaAngular, FaDatabase } from "react-icons/fa";
 import {
   SiNextdotjs,
   SiTailwindcss,
@@ -20,6 +20,8 @@ import {
   SiMongodb,
   SiExpo,
   SiReact,
+  SiSupabase,
+  SiVitest,
 } from "react-icons/si";
 
 export const PROJETOS = [
@@ -58,12 +60,12 @@ export const PROJETOS = [
       "Optimistic UI updates for high-frequency actions (likes): updates local Signals immediately with rollback on network failure",
     ],
     tecnologias: [
-      { label: "Angular 21", Icon: FaCode, layer: "front" },
+      { label: "Angular 21", Icon: FaAngular, layer: "front" },
       { label: "TypeScript", Icon: SiTypescript, layer: "front" },
       { label: "Tailwind v4", Icon: SiTailwindcss, layer: "front" },
-      { label: "Supabase", Icon: FaDatabase, layer: "back" },
+      { label: "Supabase", Icon: SiSupabase, layer: "back" },
       { label: "PostgreSQL", Icon: SiPostgresql, layer: "db" },
-      { label: "Vitest", Icon: FaCode, layer: "devops" },
+      { label: "Vitest", Icon: SiVitest, layer: "devops" },
     ],
     tipo: "Produtividade",
     tipo_en: "Productivity",
@@ -103,10 +105,10 @@ export const PROJETOS = [
       "Decoupled architecture (Component → Facade → Service → Supabase) maintaining clear separation of concerns",
     ],
     tecnologias: [
-      { label: "Angular 21", Icon: FaCode, layer: "front" },
+      { label: "Angular 21", Icon: FaAngular, layer: "front" },
       { label: "TypeScript", Icon: SiTypescript, layer: "front" },
       { label: "Tailwind v4", Icon: SiTailwindcss, layer: "front" },
-      { label: "Supabase", Icon: FaDatabase, layer: "back" },
+      { label: "Supabase", Icon: SiSupabase, layer: "back" },
       { label: "PostgreSQL", Icon: SiPostgresql, layer: "db" },
       { label: "PL/pgSQL", Icon: FaDatabase, layer: "db" },
     ],

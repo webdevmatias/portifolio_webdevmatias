@@ -1,4 +1,4 @@
-import { FaReact, FaJs, FaGitAlt } from "react-icons/fa";
+import { FaReact, FaJs, FaGitAlt, FaAngular, FaDatabase } from "react-icons/fa";
 import { FaMobileScreenButton } from "react-icons/fa6";
 import {
   SiTailwindcss,
@@ -17,6 +17,9 @@ import {
   SiPostman,
   SiNextdotjs,
   SiJsonwebtokens,
+  SiSupabase,
+  SiVitest,
+  SiVite,
 } from "react-icons/si";
 
 export const CATEGORIES = [
@@ -36,6 +39,12 @@ export const CATEGORIES = [
         label: "Next.js",
         note: "SSR, SSG e full stack com React",
         note_en: "SSR, SSG, and full-stack React",
+      },
+      {
+        Icon: FaAngular,
+        label: "Angular",
+        note: "Arquitetura modular e Standalone Components",
+        note_en: "Modular architecture and Standalone Components",
       },
       {
         Icon: FaMobileScreenButton,
@@ -106,6 +115,12 @@ export const CATEGORIES = [
     color: "#F6AD55",
     techs: [
       {
+        Icon: SiSupabase,
+        label: "Supabase",
+        note: "BaaS, Realtime, Auth e RLS no Postgres",
+        note_en: "BaaS, Realtime, Auth, and Postgres RLS",
+      },
+      {
         Icon: SiPostgresql,
         label: "PostgreSQL",
         note: "Banco relacional avançado e robusto",
@@ -153,6 +168,12 @@ export const CATEGORIES = [
         label: "Docker",
         note: "Containers e ambientes isolados",
         note_en: "Containers and isolated environments",
+      },
+      {
+        Icon: SiVitest,
+        label: "Vitest",
+        note: "Testes unitários e de integração ultrarrápidos",
+        note_en: "Ultra-fast unit and integration testing",
       },
       {
         Icon: SiPostman,

@@ -79,8 +79,8 @@ export default function Habilidades() {
                 <span className="text-xs text-gray-600">{techs.length}</span>
               </div>
 
-              {/* Chips */}
-              <div className="flex flex-wrap justify-center md:justify-start gap-2">
+              {/* Chips mais compactos */}
+              <div className="flex flex-wrap justify-center md:justify-start gap-1.5 sm:gap-2">
                 {techs.map(({ Icon, label: name, note, note_en }) => {
                   const key = `${label}-${name}`;
                   const techNote = language === "en" ? (note_en || note) : note;
