@@ -33,24 +33,24 @@ export const TRANSLATIONS = {
       timelineTitle: "Experiência Profissional :",
       timeline: [
         {
-          role: "Estagiário de Tecnologia",
+          role: "Estagiário de Desenvolvimento de Software",
           company: "Instituto de Tecnologia de Pernambuco (ITEP)",
           type: "Projeto V-LAB · Presencial",
           period: "ATUALMENTE",
           bullets: [
-            "Atuação no desenvolvimento e estruturação tecnológica do projeto de inovação V-LAB.",
-            "Foco na construção de interfaces escaláveis e na separação clara de responsabilidades entre regras de negócio, consumo de dados e componentes visuais.",
-            "Utilização de TypeScript para garantir tipagem rigorosa e segurança na integração de dados.",
+            "Atuação direta no desenvolvimento e engenharia de software para o projeto de inovação tecnológica V-LAB.",
+            "Desenvolvimento de arquitetura front-end com Angular e TypeScript, integrando interfaces dinâmicas e reativas com APIs e serviços back-end.",
+            "Foco em modularização, gerenciamento de estado e separação rigorosa de responsabilidades entre regras de negócio e componentes visuais.",
           ],
         },
         {
-          role: "Desenvolvedor Front-End & UI/UX",
+          role: "Desenvolvedor Full Stack",
           company: "Freelancer",
           type: "Projetos Logbook e Entrelinhas · Remoto",
           period: "2026",
           bullets: [
-            "Desenvolvimento e implementação de interfaces web modernas e sob medida para Logbook e Entrelinhas.",
-            "Criação de layouts responsivos e componentizados, com foco em usabilidade, performance e consumo assíncrono de dados.",
+            "Atuação Full Stack de ponta a ponta nos projetos Logbook e Entrelinhas, cobrindo todo o ciclo de vida da aplicação.",
+            "Da concepção e prototipação UI/UX ao desenvolvimento front-end reativo, regras de negócio e APIs no back-end, modelagem de banco de dados e deploy em produção.",
           ],
         },
         {
@@ -65,23 +65,23 @@ export const TRANSLATIONS = {
           ],
         },
         {
-          role: "Desenvolvedor Front-End & UI/UX",
+          role: "Desenvolvedor Full Stack",
           company: "Freelancer",
           type: "Site À Margem · Remoto",
           period: "2025",
           bullets: [
-            "Atuação de ponta a ponta no design de interface (UI/UX) e desenvolvimento frontend do projeto Site À Margem.",
-            "Tradução de requisitos de negócios em interfaces funcionais, priorizando componentização e semântica web.",
+            "Desenvolvimento Full Stack de ponta a ponta e design UI/UX para a plataforma oficial do coletivo cultural À Margem.",
+            "Implementação completa com Next.js (App Router, SSR), TypeScript, Prisma ORM e PostgreSQL, com pipeline de deploy contínuo na Vercel.",
           ],
         },
         {
-          role: "Desenvolvedor Front-End",
+          role: "Desenvolvedor Full Stack",
           company: "Projetos Universitários (UFRPE)",
           type: "Recife, Pernambuco · Presencial",
           period: "2024",
           bullets: [
-            "Desenvolvimento e estruturação de projetos acadêmicos, aplicando na prática conceitos de engenharia de software e Ciência da Computação.",
-            "Criação de interfaces e prototipação de layouts focados na jornada do usuário para demandas universitárias.",
+            "Desenvolvimento full stack e arquitetura de software para aplicações acadêmicas, aplicando na prática conceitos de Ciência da Computação.",
+            "Construção de soluções completas: modelagem de banco de dados, desenvolvimento de lógica de negócio e APIs no back-end, e interfaces funcionais e reativas no front-end.",
           ],
         },
       ],
@@ -170,24 +170,24 @@ export const TRANSLATIONS = {
       timelineTitle: "Professional Experience :",
       timeline: [
         {
-          role: "Technology Intern",
+          role: "Software Development Intern",
           company: "Pernambuco Institute of Technology (ITEP)",
           type: "V-LAB Project · On-site",
           period: "PRESENT",
           bullets: [
-            "Engineering and technological development for the V-LAB innovation project.",
-            "Focused on building scalable interfaces and clear separation between business logic, data consumption, and UI components.",
-            "Strict TypeScript usage ensuring strong typing and safe data integrations.",
+            "Direct software engineering and development for the V-LAB technological innovation project.",
+            "Built modular front-end architecture using Angular and TypeScript, integrating dynamic interfaces with backend APIs and services.",
+            "Focused on clean separation of concerns between business logic, asynchronous data flows, and reusable UI components.",
           ],
         },
         {
-          role: "Front-End & UI/UX Developer",
+          role: "Full Stack Developer",
           company: "Freelance",
           type: "Logbook & Entrelinhas Projects · Remote",
           period: "2026",
           bullets: [
-            "Development and implementation of modern, custom web interfaces for Logbook and Entrelinhas.",
-            "Responsive and component-driven layouts focused on usability, performance, and async data flow.",
+            "End-to-end Full Stack development for the Logbook and Entrelinhas projects, covering the entire application lifecycle.",
+            "From concept and UI/UX prototyping to reactive front-end engineering, back-end business logic & APIs, database modeling, and production deployment.",
           ],
         },
         {
@@ -202,23 +202,23 @@ export const TRANSLATIONS = {
           ],
         },
         {
-          role: "Front-End & UI/UX Developer",
+          role: "Full Stack Developer",
           company: "Freelance",
           type: "À Margem Project · Remote",
           period: "2025",
           bullets: [
-            "End-to-end UI/UX design and front-end development for the À Margem Project website.",
-            "Translated business requirements into functional, componentized, and semantic web interfaces.",
+            "End-to-end Full Stack development and UI/UX design for the À Margem cultural collective web platform.",
+            "Built with Next.js (App Router, SSR), TypeScript, Prisma ORM, and PostgreSQL, deployed with automated CI/CD on Vercel.",
           ],
         },
         {
-          role: "Front-End Developer",
+          role: "Full Stack Developer",
           company: "University Projects (UFRPE)",
           type: "Recife, Pernambuco · On-site",
           period: "2024",
           bullets: [
-            "Development and structuring of academic projects applying practical software engineering and Computer Science principles.",
-            "UI prototyping and layout design focused on user journeys for university demands.",
+            "Full stack software development and architecture for academic applications, applying Computer Science principles in practice.",
+            "End-to-end implementation: database modeling, back-end business logic and APIs, and functional, reactive user interfaces.",
           ],
         },
       ],
