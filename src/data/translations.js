@@ -33,12 +33,12 @@ export const TRANSLATIONS = {
       timelineTitle: "Experiência Profissional :",
       timeline: [
         {
-          role: "Estagiário de Desenvolvimento de Software",
+          role: "Bolsista de Desenvolvimento e Pesquisa",
           company: "Instituto de Tecnologia de Pernambuco (ITEP)",
-          type: "Projeto V-LAB · Presencial",
+          type: "Projeto V-LAB · Ministério dos Transportes (MT) · Presencial",
           period: "ATUALMENTE",
           bullets: [
-            "Atuação direta no desenvolvimento e engenharia de software para o projeto de inovação tecnológica V-LAB.",
+            "Atuação como bolsista de desenvolvimento e pesquisa em engenharia de software para o projeto de inovação tecnológica V-LAB, iniciativa do Ministério dos Transportes (MT) sediada no ITEP.",
             "Desenvolvimento de arquitetura front-end com Angular e TypeScript, integrando interfaces dinâmicas e reativas com APIs e serviços back-end.",
             "Foco em modularização, gerenciamento de estado e separação rigorosa de responsabilidades entre regras de negócio e componentes visuais.",
           ],
@@ -170,12 +170,12 @@ export const TRANSLATIONS = {
       timelineTitle: "Professional Experience :",
       timeline: [
         {
-          role: "Software Development Intern",
+          role: "R&D Software Engineering Fellow",
           company: "Pernambuco Institute of Technology (ITEP)",
-          type: "V-LAB Project · On-site",
+          type: "V-LAB Project · Ministry of Transport (MT) · On-site",
           period: "PRESENT",
           bullets: [
-            "Direct software engineering and development for the V-LAB technological innovation project.",
+            "Research and development fellowship in software engineering for the V-LAB technological innovation project, an initiative of the Ministry of Transport (MT) hosted at ITEP.",
             "Built modular front-end architecture using Angular and TypeScript, integrating dynamic interfaces with backend APIs and services.",
             "Focused on clean separation of concerns between business logic, asynchronous data flows, and reusable UI components.",
           ],
